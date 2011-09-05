@@ -1,5 +1,5 @@
 /*
- * jQuery stringToSlug plug-in 1.1.0
+ * jQuery stringToSlug plug-in 1.2.0
  *
  * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
  *
@@ -17,13 +17,18 @@ jQuery.fn.stringToSlug = function(options) {
 	var defaults = {
  		setEvents: 'keyup keydown blur', //set Events that your script will work
 		getPut: '#permalink', //set output field
-		space: '-' //Sets the space character. If the hyphen
+		space: '-', //Sets the space character. If the hyphen,
+		prefix: '',
+		suffix: '',
+		replace: '' //Sample: /\s?\([^\)]*\)/gi
 	};
 	
 	var opts = jQuery.extend(defaults, options);
 
 	jQuery(this).bind(defaults.setEvents, function () {
 		var text = jQuery(this).val();
+		text = defaults.prefix + text + defaults.suffix; //Concatenate with prefix and suffix		
+		text = text.replace(defaults.replace, ""); //replace
 		text = jQuery.trim(text.toString()); //Remove side spaces and convert to String Object
 		
 		var chars = []; //Cria vetor de caracteres
@@ -396,10 +401,12 @@ jQuery.fn.stringToSlug = function(options) {
 		stringToSlug = stringToSlug.replace (new RegExp ('\\'+defaults.space+'{2,}', 'gmi'), defaults.space); // Remove any space character followed by Breakfast
 		stringToSlug = stringToSlug.replace (new RegExp ('(^'+defaults.space+')|('+defaults.space+'$)', 'gmi'), ''); // Remove the space at the beginning or end of string
 		
-		stringToSlug = stringToSlug.toLowerCase(); //Convert your slug in lowercase
+		stringToSlug = stringToSlug.toLowerCase(); //Convert your slug in lowercase		
+		
 		
 		jQuery(defaults.getPut).val(stringToSlug); //Write in value to input fields (input text, textarea, input hidden, ...)
 		jQuery(defaults.getPut).html(stringToSlug); //Write in HTML tags (span, p, strong, h1, ...)
+		
 		
 		return this;
 	});
