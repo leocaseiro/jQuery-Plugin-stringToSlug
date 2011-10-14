@@ -1,5 +1,5 @@
 /*
- * jQuery stringToSlug plug-in 1.2.0
+ * jQuery stringToSlug plug-in 1.2.1
  *
  * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
  *
@@ -45,14 +45,14 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('');   // %
 		chars.push ('');   // &
 		chars.push ("");   // '
-		chars.push ('-');  // (
-		chars.push ('-');  // ); 
+		chars.push (defaults.space);  // (
+		chars.push (defaults.space);  // ); 
 		chars.push ('');   // *
 		chars.push ('');   // +
-		chars.push ('-');  // ); 
-		chars.push ('-');  // -
-		chars.push ('-');  // .
-		chars.push ('-');  // /
+		chars.push (defaults.space);  // ); 
+		chars.push (defaults.space);  // -
+		chars.push (defaults.space);  // .
+		chars.push (defaults.space);  // /
 		chars.push ('0');  // 0
 		chars.push ('1');  // 1
 		chars.push ('2');  // 2
@@ -96,11 +96,11 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('X');  // X
 		chars.push ('Y');  // Y
 		chars.push ('Z');  // Z
-		chars.push ('-');  // [
-		chars.push ("-");  // /
-		chars.push ('-');  // ]
+		chars.push (defaults.space);  // [
+		chars.push (defaults.space);  // /
+		chars.push (defaults.space);  // ]
 		chars.push ('');   // ^
-		chars.push ('-');  // _
+		chars.push (defaults.space);  // _
 		chars.push ('');   // `
 		chars.push ('a');  // a
 		chars.push ('b');  // b
@@ -128,9 +128,9 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('x');  // x
 		chars.push ('y');  // y
 		chars.push ('z');  // z
-		chars.push ('-');  // {
+		chars.push (defaults.space);  // {
 		chars.push ('');   // |
-		chars.push ('-');  // }
+		chars.push (defaults.space);  // }
 		chars.push ('');   // ~
 		chars.push ('');   // ?
 		chars.push ('C'); 
@@ -155,8 +155,8 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push (''); 
 		chars.push (''); 
 		chars.push (''); 
-		chars.push ('-'); 
-		chars.push ('-'); 
+		chars.push (defaults.space); 
+		chars.push (defaults.space); 
 		chars.push (''); 
 		chars.push ('TM'); 
 		chars.push ('s'); 
@@ -180,7 +180,7 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push (''); 
 		chars.push (''); 
 		chars.push ('r'); 
-		chars.push ('-'); 
+		chars.push (defaults.space); 
 		chars.push ('o'); 
 		chars.push (''); 
 		chars.push ('2'); 

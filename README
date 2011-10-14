@@ -21,5 +21,8 @@ Features available with version 1.2.0
 - Set suffix (Ex: file extension ".jpg")
 - Define replace regExpress before the slug generate (Ex: remove text in parentheses)
 
+Features available with version 1.2.1
+- Fixed error when use '_' or other char in space char
+
 
 Usage: http://leocaseiro.com.br/jquery-plugin-string-to-slug/
