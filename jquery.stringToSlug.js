@@ -20,7 +20,8 @@ jQuery.fn.stringToSlug = function(options) {
 		space: '-', //Sets the space character. If the hyphen,
 		prefix: '',
 		suffix: '',
-		replace: '' //Sample: /\s?\([^\)]*\)/gi
+		replace: '', //Sample: /\s?\([^\)]*\)/gi
+		callback: false
 	};
 	
 	var opts = jQuery.extend(defaults, options);
@@ -407,6 +408,9 @@ jQuery.fn.stringToSlug = function(options) {
 		jQuery(defaults.getPut).val(stringToSlug); //Write in value to input fields (input text, textarea, input hidden, ...)
 		jQuery(defaults.getPut).html(stringToSlug); //Write in HTML tags (span, p, strong, h1, ...)
 		
+		if(defaults.callback!=false){		
+			defaults.callback(stringToSlug);
+		}
 		
 		return this;
 	});
