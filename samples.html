@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
 	$(document).ready( function() {
-		$("#string").stringToSlug();
+		$("#string").stringToSlug({callback: function(text){ console.log(text); }});
 	});
 </script>
 <style>
@@ -107,6 +107,18 @@
 		//Replace by underscore
 		$(&quot;#input[name=string]&quot;).stringToSlug({
 			space: &quot;_&quot;
+		);
+	});
+	</pre>
+</div>
+
+<div class="sample">
+	<h4>Calls a given callback function:</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		//Replace by underscore
+		$(&quot;#input[name=string]&quot;).stringToSlug({
+			callback: function(slug){ console.log(slug); }
 		);
 	});
 	</pre>
