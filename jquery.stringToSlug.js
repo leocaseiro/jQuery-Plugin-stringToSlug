@@ -133,10 +133,13 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('');   // |
 		chars.push (defaults.space);  // }
 		chars.push ('');   // ~
-		chars.push ('');   // ?
-		chars.push ('C'); 
-		chars.push ('A'); 
-		chars.push (''); 
+		chars.push ('');   // ? 007F control char: del
+
+		// start of C1 Controls (Range: 0080–009F)
+		// TODO: shouldn't control chars be empty?
+		chars.push ('C'); // 0080 control char 
+		chars.push ('A');
+		chars.push ('');
 		chars.push ('f'); 
 		chars.push (''); 
 		chars.push (''); 
@@ -149,7 +152,7 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('CE'); 
 		chars.push ('A'); 
 		chars.push ('Z'); 
-		chars.push ('A'); 
+		chars.push ('A'); // 008F control char
 		chars.push ('A'); 
 		chars.push (''); 
 		chars.push (''); 
@@ -164,10 +167,12 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push (''); 
 		chars.push ('ae'); 
 		chars.push ('A'); 
-		chars.push ('z'); 
-		chars.push ('Y'); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('z');
+		chars.push ('Y'); // 009F control char: application program command
+
+		// start of Latin-1 Supplement (Range: 00A0-00FF)
+		chars.push (''); // 00A0 control char: no break space 
+		chars.push ('');
 		chars.push ('c'); 
 		chars.push ('L'); 
 		chars.push ('o'); 
@@ -176,7 +181,7 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('S'); 
 		chars.push (''); 
 		chars.push ('c'); 
-		chars.push ('a'); 
+		chars.push ('a');
 		chars.push (''); 
 		chars.push (''); 
 		chars.push (''); 
@@ -198,7 +203,7 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push (''); 
 		chars.push (''); 
 		chars.push (''); 
-		chars.push ('A'); 
+		chars.push ('A'); //00C0 À
 		chars.push ('A'); 
 		chars.push ('A'); 
 		chars.push ('A'); 
@@ -261,142 +266,149 @@ jQuery.fn.stringToSlug = function(options) {
 		chars.push ('u'); 
 		chars.push ('y'); 
 		chars.push (''); 
-		chars.push ('y');
-		chars.push ('z');
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('y'); // 00FF
+
+		// start of Latin Extended-A (Range: Range: 0100–017F)
+		chars.push ('A'); // 0100 Ā
+		chars.push ('a');
+		chars.push ('A'); 
+		chars.push ('a'); 
+		chars.push ('A'); 
+		chars.push ('a');
+		chars.push ('C'); // 0106 Ć 
+		chars.push ('c'); 
 		chars.push ('C'); 
 		chars.push ('c'); 
+		chars.push ('C'); 
+		chars.push ('c'); 
+		chars.push ('C'); 
+		chars.push ('c'); 
+		chars.push ('D'); // 010E Ď
+		chars.push ('d'); 
 		chars.push ('D'); 
 		chars.push ('d'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('E'); // 0112 Ē
+		chars.push ('e'); 
 		chars.push ('E'); 
 		chars.push ('e'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('E'); 
+		chars.push ('e'); 
+		chars.push ('E'); 
+		chars.push ('e'); 
+		chars.push ('E'); 
+		chars.push ('e'); 
+		chars.push ('G'); // 011C Ĝ 
+		chars.push ('g'); 
+		chars.push ('G'); 
+		chars.push ('g'); 
+		chars.push ('G'); 
+		chars.push ('g'); 
+		chars.push ('G'); 
+		chars.push ('g'); 
+		chars.push ('H'); // 0124 Ĥ
+		chars.push ('h'); 
+		chars.push ('H'); 
+		chars.push ('h'); 
+		chars.push ('I'); // 0128 Ĩ
+		chars.push ('i'); 
+		chars.push ('I'); 
+		chars.push ('i'); 
+		chars.push ('I'); 
+		chars.push ('i'); 
+		chars.push ('I'); 
+		chars.push ('i'); 
+		chars.push ('I'); 
+		chars.push ('i');
+		chars.push ('IJ'); // 0132 Ĳ 
+		chars.push ('ij'); 
+		chars.push ('J'); 
+		chars.push ('j'); 
+		chars.push ('K'); // 0136 Ķ
+		chars.push ('k'); 
+		chars.push ('k'); 
+		chars.push ('L'); // 0139 Ĺ 
+		chars.push ('l'); 
+		chars.push ('L'); 
+		chars.push ('l'); 
+		chars.push ('L'); 
+		chars.push ('l'); 
+		chars.push ('L'); 
+		chars.push ('l'); 
+		chars.push ('L'); 
+		chars.push ('l'); 
+		chars.push ('N'); // 0143 Ń  
+		chars.push ('n'); 
 		chars.push ('N'); 
 		chars.push ('n'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('N'); 
+		chars.push ('n'); 
+		chars.push ('n'); // 0149 deprecated ŉ
+		chars.push ('N'); 
+		chars.push ('n'); 
+		chars.push ('O'); // 014C Ō 
+		chars.push ('o'); 
+		chars.push ('O'); 
+		chars.push ('o'); 
+		chars.push ('O'); 
+		chars.push ('o'); 
+		chars.push ('OE');
+		chars.push ('oe'); 
+		chars.push ('R'); // 0154 Ŕ
+		chars.push ('r'); 
 		chars.push ('R'); 
 		chars.push ('r'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('R');
+		chars.push ('r'); 
+		chars.push ('S'); // 015A Ś
+		chars.push ('s'); 
 		chars.push ('S'); 
 		chars.push ('s'); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('S'); 
+		chars.push ('s'); 
+		chars.push ('S'); 
+		chars.push ('s'); 
+		chars.push ('T'); // 0162 Ţ 
+		chars.push ('t'); 
 		chars.push ('T'); 
 		chars.push ('t'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('T'); 
+		chars.push ('t'); 
+		chars.push ('U'); // 0168 Ũ
+		chars.push ('u'); 
 		chars.push ('U'); 
 		chars.push ('u'); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
-		chars.push (''); 
+		chars.push ('U'); 
+		chars.push ('u'); 
+		chars.push ('U'); 
+		chars.push ('u'); 
+		chars.push ('U'); 
+		chars.push ('u'); 
+		chars.push ('U'); 
+		chars.push ('u'); 
+		chars.push ('W'); // 0174 Ŵ 
+		chars.push ('w'); 
+		chars.push ('Y'); // 0176 Ŷ
+		chars.push ('y'); 
+		chars.push ('Y'); 
+		chars.push ('Z'); // 0179 Ź
+		chars.push ('z'); 
 		chars.push ('Z'); 
 		chars.push ('z'); 
+		chars.push ('Z'); 
+		chars.push ('z'); 
+		chars.push ('s'); // 017F
+		// end of Latin Extended-A
+		// TODO: add other characters
 		
 		for (var i = 256; i < 100; i++) {
 			chars.push ('');
 		}
 		
 		var stringToSlug = new String (); //Create a stringToSlug String Object
+		var lenChars = chars.length; // store length of the array
 		for (var i = 0; i < text.length; i ++) {
-			stringToSlug += chars[text.charCodeAt (i)]; //Insert values converts at slugs
+			var cCAt = text.charCodeAt(i);
+			if(cCAt < lenChars) stringToSlug += chars[cCAt]; //Insert values converts at slugs (if it exists in the array)
 		}
 		
 		stringToSlug = stringToSlug.replace (new RegExp ('\\'+defaults.space+'{2,}', 'gmi'), defaults.space); // Remove any space character followed by Breakfast
