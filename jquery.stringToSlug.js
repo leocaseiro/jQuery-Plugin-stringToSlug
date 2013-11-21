@@ -397,7 +397,31 @@ jQuery.fn.stringToSlug = function(options) {
 			'z',
 			'Z',
 			'z',
-			's'  // 017F
+			's',  // 017F
+			'Ş',
+			's',
+			'ş',
+			's',
+			'Ç',
+			'c',
+			'ç',
+			'c',
+			'İ',
+			'i',
+			'ı',
+			'i',
+			'ğ',
+			'g',
+			'Ğ',
+			'g',
+			'ü',
+			'u',
+			'Ü',
+			'u',
+			'ö',
+			'o',
+			'Ö',
+			'o'
 		);
 		// end of Latin Extended-A
 		// TODO: add other characters
