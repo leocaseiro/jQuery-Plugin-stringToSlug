@@ -1,4 +1,4 @@
-The Simple Plugin in jQuery Java Script Framework.
+A Simple Plugin in jQuery Java Script Framework.
 The stringToSlug converts any string to SLUG in all Languages with or without accented characters and Special Characters too.
 
 The plugin removes special characters, converts the string to lowercase and defines a space character. You can set a prefix and/or suffix before to convert.
