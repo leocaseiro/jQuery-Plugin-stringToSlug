@@ -10,7 +10,9 @@
 
 <script type="text/javascript">
 	$(document).ready( function() {
-		$("#string").stringToSlug({callback: function(text){ console.log(text); }});
+		$("#string").stringToSlug({
+			callback: function(text){ console.log(text); }
+		});
 	});
 </script>
 <style>
@@ -33,6 +35,7 @@
 	* Default Events: Blur, KeyUp e KeyDown:
 	* Default Get Put: #permalink
 	* Default Space Replacement: - (hiphen)
+	* Default &(AND) Char Replacement: and
 	*/
 	</em>
 	$(document).ready( function() {
@@ -50,7 +53,12 @@
 		$(&quot;#title&quot;).stringToSlug({
 			setEvents: &#039;keyup keydown blur&#039;,
 			getPut: &#039;#permalink&#039;,
-			space: &#039;-&#039;
+			space: &#039;-&#039;,
+			prefix: &#039;&#039;,
+			suffix: &#039;&#039;,
+			replace: &#039;&#039;,
+			AND: &#039;and&#039;,
+			callback: false
 		});
 	});
 	</div>
@@ -66,14 +74,13 @@
 		//Only Event Blur
 		$(&quot;#only-blur-event&quot;).stringToSlug({
 			setEvents: &quot;blur&quot;
-		);
+		});
 
 		//2 Events or More
 		//This sample, Usage Events: KeyUp and KeyDown
 		$(&quot;#keyup-and-keydown-events&quot;).stringToSlug({
 			setEvents: &quot;keyup keydown&quot;
-
-		);
+		});
 	});
 	</div>
 	<br />	
@@ -87,13 +94,12 @@
 		//Previem in all texarea
 		$(&quot;input[name=string]&quot;).stringToSlug({
 			getPut: &quot;textarea&quot;
-		);
+		});
 
 		//Preview in all elements preview class
 		$(&quot;#input[name=string]&quot;).stringToSlug({
 			getPut: &quot;.class&quot;
-
-		);
+		});
 	});
 	</div>
 	<br />	
@@ -107,7 +113,7 @@
 		//Replace by underscore
 		$(&quot;#input[name=string]&quot;).stringToSlug({
 			space: &quot;_&quot;
-		);
+		});
 	});
 	</pre>
 </div>
@@ -118,11 +124,52 @@
 	$(document).ready( function() {
 		//Replace by underscore
 		$(&quot;#input[name=string]&quot;).stringToSlug({
-			callback: function(slug){ console.log(slug); }
-		);
+			callback: function(slug){ console.log(slug);
+		});
 	});
 	</pre>
 </div>
+
+
+<div class="sample">
+	<h4>Remove text between parentheses</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		//Replace by underscore
+		$(&quot;#input['no-parentheses']&quot;).stringToSlug({
+			replace: '/\s?\([^\)]*\)/gi'
+		});
+	});
+	</pre>
+</div>
+
+<div class="sample">
+	<h4>Replace &(and) CHAR (added on 1.3)</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		//Replace & to e (Portuguese)
+		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+			AND: 'e'
+		});
+
+		//Replace & to Y (Spanish)
+		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+			AND: 'y'
+		});
+
+		//Replace & to Empty
+		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+			AND: ''
+		});
+
+		//Replace & to hyphen
+		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+			AND: '-'
+		});
+	});
+	</pre>
+</div>
+
 <br /><br />
 <em><small>jQuery Plugin StringToSlug create by <a title="Create at Leo Caseiro" href="http://leocaseiro.com.br/">@leocaseiro</a></small></em>
 </body>
