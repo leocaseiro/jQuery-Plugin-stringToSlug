@@ -424,11 +424,8 @@ jQuery.fn.stringToSlug = function(options) {
 			'Ö',
 			'o'
 		);
-<<<<<<< HEAD
 
 		//TODO: Support in Cyrillic, Arabic, CJK
-=======
->>>>>>> 09629a927d969e1cc6ca16e1f70050a47e680e76
 
 		var stringToSlug = new String (); //Create a stringToSlug String Object
 		var lenChars = chars.length; // store length of the array
