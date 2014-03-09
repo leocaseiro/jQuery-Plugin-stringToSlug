@@ -1,7 +1,7 @@
-The Simple Plugin in jQuery Java Script Framework.
-The stringToSlug converts any string to SLUG in all Languages with or without accented characters and Special Characters too.
+A Simple Plugin in jQuery JavaScript Framework.
+The stringToSlug converts any string to SLUG supporting all Languages using or not accent and special chars as well.
 
-The plugin removes special characters, converts the string to lowercase and defines a space character. You can set a prefix and/or suffix before to convert.
+The plugin removes special characters, converts the string to lowercase and defines a space character. You can set a prefix and/or suffix before to convert it.
 
 Transforming a string into a url-friendly permalink.
 You can use the plugin to display a view in html elements or form inputs.
@@ -19,10 +19,15 @@ Features version 1.0.1:
 Features available with version 1.2.0
 - Set prefix (Ex: prefix table "tbl_")
 - Set suffix (Ex: file extension ".jpg")
-- Define replace regExpress before the slug generate (Ex: remove text in parentheses)
+- Define replace regExpress before the slug be generated (Ex: remove text in parentheses)
 
 Features available with version 1.2.1
 - Fixed error when use '_' or other char in space char
+- callback implemented // eq: function(text){ console.log(text); }
+
+Features available with version 1.3
+- Replace AND char
+- Fixed quote error following the ISSUE: Undefined chars #4
 
 
-Usage: http://leocaseiro.com.br/jquery-plugin-string-to-slug/
+Documentaion and Usage: samples.html

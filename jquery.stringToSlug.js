@@ -1,5 +1,5 @@
 /*
- * jQuery stringToSlug plug-in 1.2.1
+ * jQuery stringToSlug plug-in 1.3
  *
  * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
  *
@@ -21,7 +21,8 @@ jQuery.fn.stringToSlug = function(options) {
 		prefix: '',
 		suffix: '',
 		replace: '', //Sample: /\s?\([^\)]*\)/gi
-		callback: false
+		AND: 'and',
+		callback: false,
 	};
 
 	var opts = jQuery.extend(defaults, options);
@@ -45,7 +46,7 @@ jQuery.fn.stringToSlug = function(options) {
 			'',   // #
 			'',   // $
 			'',   // %
-			'',   // &
+			defaults.AND,   // &
 			"",   // '
 			defaults.space,  // (
 			defaults.space,  // ,
@@ -65,10 +66,10 @@ jQuery.fn.stringToSlug = function(options) {
 			'7',  // 7
 			'8',  // 8
 			'9',  // 9
-			'',   // :
-			'',   // ;
+			defaults.space,   // :
+			defaults.space,   // ;
 			'',   // <
-			'',   // =
+			defaults.space,   // =
 			'',   // >
 			'',   // ?
 			'',   // @
@@ -423,12 +424,8 @@ jQuery.fn.stringToSlug = function(options) {
 			'Ö',
 			'o'
 		);
-		// end of Latin Extended-A
-		// TODO: add other characters
 
-		for (var i = 256; i < 100; i++) {
-			chars.push ('');
-		}
+		//TODO: Support in Cyrillic, Arabic, CJK
 
 		var stringToSlug = new String (); //Create a stringToSlug String Object
 		var lenChars = chars.length; // store length of the array
