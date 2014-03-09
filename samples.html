@@ -135,9 +135,15 @@
 	<h4>Remove text between parentheses</h4>
 	<pre class="brush: javascript">
 	$(document).ready( function() {
+<<<<<<< HEAD
 		//Remove between parentheses
 		$(&quot;#input['no-parentheses']&quot;).stringToSlug({
 			replace: /\s?\([^\)]*\)/gi
+=======
+		//Replace by underscore
+		$(&quot;#input['no-parentheses']&quot;).stringToSlug({
+			replace: '/\s?\([^\)]*\)/gi'
+>>>>>>> 09629a927d969e1cc6ca16e1f70050a47e680e76
 		});
 	});
 	</pre>
