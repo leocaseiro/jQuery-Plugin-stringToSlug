@@ -1,20 +1,22 @@
 {
   "name": "stringToSlug",
-  "title": "jQuery Plugin StringToSlug",
-  "description": "The stringToSlug converts any string to SLUG PERMALINK supporting all Languages using special chars or not in most of languages(English, French, Portuguese, Slovak, Spanish, Turkish...) according to unicode.org/charts",
+  "version": "1.3.0",
+  "title": "jQuery Plugin stringToSlug",
+  "description": "The stringToSlug converts any string to SLUG PERMALINK according unicode.org in most of Languages using special chars or not ())",
   "keywords": [
-    "string",
-    "slug",
     "permalink",
+    "string",
     "text",
+    "slug",
     "convert",
+    "transform",
     "generate",
     "sanitize",
+    "unicode",
     "encode",
     "latin",
-    "unicode",
+    "chars"
   ],
-  "version": "1.3",
   "author": {
     "name": "Leo Caseiro",
     "url": "http://leocaseiro.com.br/"
@@ -28,7 +30,7 @@
   "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
   "homepage": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
   "docs": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
-  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/zipball/master",
+  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/1.3.0.zip",
   "dependencies": {
     "jquery": ">=1.2.2"
   }
