@@ -30,7 +30,7 @@
   "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
   "homepage": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
   "docs": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
-  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/1.3.zip",
+  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/1.3.0.zip",
   "dependencies": {
     "jquery": ">=1.2.2"
   }
