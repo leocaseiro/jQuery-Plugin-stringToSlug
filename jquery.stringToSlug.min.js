@@ -1,5 +1,5 @@
 /*
- * jQuery stringToSlug plug-in 1.3
+ * jQuery stringToSlug plug-in 1.3.0
  *
  * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
  *
