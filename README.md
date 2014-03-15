@@ -4,7 +4,7 @@ jQuery Plugin stringToSlug
 A Simple Plugin in jQuery JavaScript Framework.
 The stringToSlug converts any string to SLUG supporting all Languages using or not accent and special chars as well.
 
-DEFAULT SAGE:
+Default Usage:
 -----------------
 
     $(document).ready( function() {
