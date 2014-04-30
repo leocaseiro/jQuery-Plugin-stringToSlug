@@ -22,7 +22,7 @@ You can use the plugin to display a view in html elements or form inputs.
 
 It is the only plugin that removes the stress of words, exchanging letters marked by unaccented letters.
 
-Features version 1.0:
+Features version 1.0.0:
 -----------------
 * Set one or more events to work (Default events are keyup, keydown and blur)
 * Set get input or element to view the slug (Ex: input[type=hidden] or span#slug)
@@ -43,7 +43,7 @@ Features available with version 1.2.1
 * Fixed error when use '_' or other char in space char
 * callback implemented // eq: function(text){ console.log(text); }
 
-Features available with version 1.3
+Features available with version 1.3.0
 -----------------
 * Replace AND char
 * Fixed quote error following the ISSUE: Undefined chars #4
