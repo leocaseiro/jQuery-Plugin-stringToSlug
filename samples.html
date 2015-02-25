@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Samples jQuery Plugin stringToSlug | Leo Caseiro</title>	
+<title>Samples jQuery Plugin stringToSlug | Leo Caseiro</title>
 <meta http-equiv="content-language" content="pt-br" />
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -42,8 +42,27 @@
 		$(&quot;#string&quot;).stringToSlug();
 	});
 	</div>
-	<br />	
-	</pre>	
+	<br />
+	</pre>
+</div>
+
+<div class="sample">
+	<h4>FINALLY: Using the API doesn't need output (added on 1.3.1)</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		var text = "I'd like to invite my fiancé";
+		_stringToSlug_API( text );
+		console.log(text);
+	});
+	</pre>
+
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		var text = "él & ella!";
+		result = _stringToSlug_API( text, options = { 'AND': 'y', 'space': '_', suffix: '.jpg' } );
+		console.log(result); //returns: el_y_ella.jpg
+	});
+	</pre>
 </div>
 
 <div class="sample">
@@ -62,7 +81,7 @@
 		});
 	});
 	</div>
-	<br />	
+	<br />
 	</pre>
 
 <div class="sample">
@@ -83,7 +102,7 @@
 		});
 	});
 	</div>
-	<br />	
+	<br />
 	</pre>
 </div>
 
@@ -102,7 +121,7 @@
 		});
 	});
 	</div>
-	<br />	
+	<br />
 	</pre>
 </div>
 
@@ -132,7 +151,7 @@
 
 
 <div class="sample">
-	<h4>Remove text between parentheses</h4>
+	<h4>Remove text between parentheses:</h4>
 	<pre class="brush: javascript">
 	$(document).ready( function() {
 		//Remove between parentheses
@@ -144,33 +163,55 @@
 </div>
 
 <div class="sample">
-	<h4>Replace &(and) CHAR (added on 1.3.0)</h4>
+	<h4>Replace &(and) CHAR (added on 1.3.0):</h4>
 	<pre class="brush: javascript">
 	$(document).ready( function() {
 		//Replace & to e (Portuguese)
-		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+		$(&quot;#input&quot;).stringToSlug({
 			AND: 'e'
 		});
 
 		//Replace & to Y (Spanish)
-		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+		$(&quot;#input&quot;).stringToSlug({
 			AND: 'y'
 		});
 
 		//Replace & to Empty
-		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+		$(&quot;#input&quot;).stringToSlug({
 			AND: ''
 		});
 
 		//Replace & to hyphen
-		$(&quot;#input['no-parenteses']&quot;).stringToSlug({
+		$(&quot;#input&quot;).stringToSlug({
 			AND: '-'
 		});
 	});
 	</pre>
 </div>
 
+<div class="sample">
+	<h4>Set a prefix, like an URL:</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		$(&quot;#input&quot;).stringToSlug({
+			prefix: 'http://'
+		});
+	});
+	</pre>
+</div>
+
+<div class="sample">
+	<h4>Set a suffix, like an extension:</h4>
+	<pre class="brush: javascript">
+	$(document).ready( function() {
+		$(&quot;#input&quot;).stringToSlug({
+			suffix: '.jpg'
+		});
+	});
+	</pre>
+</div>
+
 <br /><br />
-<em><small>jQuery Plugin StringToSlug create by <a title="Create at Leo Caseiro" href="http://leocaseiro.com.br/">@leocaseiro</a></small></em>
+<em><small>jQuery Plugin StringToSlug create by <a title="Create by Leo Caseiro" href="http://leocaseiro.com.br/">@leocaseiro</a></small></em>
 </body>
 </html>
