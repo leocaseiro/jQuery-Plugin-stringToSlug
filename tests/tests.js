@@ -1,8 +1,16 @@
-$('body').append('<input id="text" type="hidden" /><input type="hidden" id="permalink" />');
-$('#text').stringToSlug();
+function setupBefore() {
+    $('body').append('<input id="text" type="hidden" /><input type="hidden" id="permalink" />');
+}
 
-function fromToTest(preText, resultExpect, fieldInput) {
-	$('#' + fieldInput)
+function teardownAfter() {
+    $('#text').remove();
+}
+
+function fromToTest(preText, resultExpect, params) {
+    params = params || {};
+    $('#text').stringToSlug(params);
+
+    $('#text')
 		.val(preText)
 		.trigger('blur');
 
@@ -10,118 +18,82 @@ function fromToTest(preText, resultExpect, fieldInput) {
 	equal(result, resultExpect, preText + ': ' + result);
 }
 
-module('Languages support');
-test( "Brazilian Portuguese", function() {
 
-	var preText 		= 'Acentuação tem que ficar! Bonita e sem acento!';
-	var resultExpect 	= 'acentuacao-tem-que-ficar-bonita-e-sem-acento';
-
-	fromToTest(preText, resultExpect, 'text');
-
+test('speakingurl Dependency', function(){
+    strictEqual(true, typeof getSlug !== 'undefined', 'getURL() passed');
 });
 
-test( "English", function() {
-
-	var preText 		= 'Accent has to stay! Beautiful and without accent!';
-	var resultExpect 	= 'accent-has-to-stay-beautiful-and-without-accent';
-
-	fromToTest(preText, resultExpect, 'text');
-
+module('Features', {
+    setup: setupBefore,
+    teardown: teardownAfter
 });
-
-test( "Slovak", function() {
-
-	var preText 		= 'vyhľadával NIEKOĽKÝMI';
-	var resultExpect 	= 'vyhladaval-niekolkymi';
-
-	fromToTest(preText, resultExpect, 'text');
-
-});
-
-test( "Turkish", function() {
-
-	var preText 		= 'İnsan oğulları üzerine ecdadım Bumın hakan, İstemi hakan tahta oturmuş;';
-	var resultExpect 	= 'insan-ogullari-uzerine-ecdadim-bumin-hakan-istemi-hakan-tahta-oturmus';
-
-	fromToTest(preText, resultExpect, 'text');
-
-});
-
-module('Commands and functionality');
 
 test( "Replace", function() {
-	var fieldInput = 'no-parentheses';
-	$('body'). append('<input id="' + fieldInput + '" type="hidden" />');
-	$('#' + fieldInput).stringToSlug({
+    var params = {
         replace: /\s?\([^\)]*\)/gi
-   	});
+   	};
 
 	var preText 		= "I'll be alone (because Ill be removed)!";
-	var resultExpect 	= 'ill-be-alone';
+	var resultExpect 	= 'i-ll-be-alone';
 
-	fromToTest(preText, resultExpect, fieldInput);
+	fromToTest(preText, resultExpect, params);
 });
 
 test( "Space", function() {
-	var fieldInput = 'space';
-	$('body'). append('<input id="' + fieldInput + '" type="hidden" />');
-	$('#' + fieldInput).stringToSlug({
+    var params = {
         space: '_'
-   	});
+   	};
 
 	var preText 		= "The space is an undescore";
 	var resultExpect 	= 'the_space_is_an_undescore';
 
-	fromToTest(preText, resultExpect, fieldInput);
+	fromToTest(preText, resultExpect, params);
 });
 
 test( "Prefix", function() {
-	var fieldInput = 'prefix';
-	$('body'). append('<input id="' + fieldInput + '" type="hidden" />');
-	$('#' + fieldInput).stringToSlug({
+    var params = {
         prefix: 'http://'
-   	});
+   	};
 
 	var preText 		= "I will get a prefix!";
 	var resultExpect 	= 'http://i-will-get-a-prefix';
 
-	fromToTest(preText, resultExpect, fieldInput);
+	fromToTest(preText, resultExpect, params);
 });
 
 
 test( "Suffix", function() {
-	var fieldInput = 'sufix';
-	$('body'). append('<input id="' + fieldInput + '" type="hidden" />');
-	$('#' + fieldInput).stringToSlug({
+    var params = {
         suffix: '.jpg'
-   	});
+   	};
 
 	var preText 		= "I will get a suffix!";
 	var resultExpect 	= 'i-will-get-a-suffix.jpg';
 
-	fromToTest(preText, resultExpect, fieldInput);
+	fromToTest(preText, resultExpect, params);
 });
 
 test( "& AND", function() {
-	var fieldInput = 'and';
-	$('body'). append('<input id="' + fieldInput + '" type="hidden" />');
-	$('#' + fieldInput).stringToSlug({
+    var params = {
         AND: 'e'
-   	});
+   	};
 
 	var preText 		= "Man & Woman";
 	var resultExpect 	= 'man-e-woman';
 
-	fromToTest(preText, resultExpect, fieldInput);
+	fromToTest(preText, resultExpect, params);
 });
 
 
-module('Bugs fixed');
+module('Bug fixes', {
+    setup: setupBefore,
+    teardown: teardownAfter
+});
 
 test( "“ and ” (Undefined chars)", function() {
 
 	var preText 		= "A text betweet quotes “ and ” are not going to be a problem!";
 	var resultExpect 	= 'a-text-betweet-quotes-and-are-not-going-to-be-a-problem';
 
-	fromToTest(preText, resultExpect, 'text');
+	fromToTest(preText, resultExpect);
 });

@@ -1,11 +1,12 @@
 /*
- * jQuery stringToSlug plug-in 1.3.1
+ * jQuery stringToSlug plug-in 2.0.0
  *
  * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
  *
  * Copyright (c) 2009 Leo Caseiro
  *
- * Based on Edson Hilios (http://www.edsonhilios.com.br/ Algoritm
+ * v1 Based on [Edson Hilios](http://www.edsonhilios.com.br/) Algorithm
+ * v2 Uses [SpeakingURL](https://github.com/pid/speakingurl)
  *
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -38,7 +39,7 @@ var _stringToSlug_API = function( text, options ) {
     }
 
     /**
-     * from stringToSlug.space to getSlug.separator
+     * from stringToSlug.AND to getSlug.custom
      */
     if ( ! defaults.options.hasOwnProperty( 'custom' ) ) {
         defaults.options.custom = { '&': defaults.AND };
