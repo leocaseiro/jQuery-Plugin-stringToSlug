@@ -1,0 +1,37 @@
+{
+  "name": "jQuery-Plugin-stringToSlug",
+  "version": "2.0.0",
+  "homepage": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug",
+  "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
+  "authors": [
+    "leocaseiro <leobok@gmail.com>"
+  ],
+  "description": "Convert a STRING to a SLUG in any language using jQuery and SpeakingURL",
+  "main": "jquery.stringToSlug.min.js",
+  "license": "GPL 3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "permalink",
+    "string",
+    "text",
+    "slug",
+    "convert",
+    "transform",
+    "generate",
+    "sanitize",
+    "unicode",
+    "encode",
+    "latin",
+    "chars"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "speakingurl": "~6.0.0"
+  }
+}

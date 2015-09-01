@@ -29,7 +29,7 @@
     "catch"
   ],
   "requireOperatorBeforeLineBreak": true,
-  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": null,
   "maximumLineLength": {
     "value": 120,
     "allowComments": true,
@@ -104,5 +104,7 @@
   "requireMultipleVarDecl": null,
   "requireParenthesesAroundIIFE": true,
   "requireFunctionDeclarations": null,
-  "disallowSpaceAfterObjectKeys": null
+  "disallowSpaceAfterObjectKeys": null,
+  "disallowCapitalizedComments": null,
+  "requireCapitalizedComments": null
 }

@@ -4,7 +4,6 @@
   "boss": true,
   "browser": true,
   "curly": true,
-  "devel": true,
   "eqeqeq": false,
   "eqnull": true,
   "es3": true,
@@ -20,11 +19,13 @@
   "nonew": true,
   "nonbsp": true,
   "onevar": true,
-  "predef": ["jquery"],
+  "predef": ["jquery", "getSlug"],
   "quotmark": "single",
   "strict": true,
   "sub": true,
   "trailing": true,
   "undef": true,
-  "unused": true
+  "unused": true,
+  "newcap": false,
+  "camelcase": false
 }
