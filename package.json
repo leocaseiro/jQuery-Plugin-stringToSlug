@@ -48,6 +48,7 @@
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.9",
     "karma-phantomjs-launcher": "^0.2.1",
-    "karma-qunit": "^0.1.5"
+    "karma-qunit": "^0.1.5",
+    "qunitjs": "^1.19.0"
   }
 }
