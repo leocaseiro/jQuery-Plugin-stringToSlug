@@ -1,13 +1,12 @@
 module.exports = function() {
-    var dist = './dist/',
+    var assets = './src/',
+        dist = './dist/',
         config = {
-            js   : './dist/js/*.js',
-
-            // JS
-            jsDir: './*.js',
+            // Src
+            jsSrc: assets + './*.js',
 
             //Dest
-            jsDirDest: dist + './js/'
+            jsDest: dist
         };
 
     return config;
