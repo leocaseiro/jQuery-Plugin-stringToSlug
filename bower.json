@@ -4,16 +4,15 @@
   "homepage": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug",
   "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
   "authors": [
-    "leocaseiro <leobok@gmail.com>"
+    "Leo Caseiro"
   ],
   "description": "Convert a STRING to a SLUG in any language using jQuery and SpeakingURL",
-  "main": "jquery.stringToSlug.min.js",
+  "main": "dist/jquery.stringToSlug.min.js",
   "license": "GPL 3.0",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
     "tests"
   ],
   "keywords": [
