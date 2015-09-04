@@ -19,7 +19,7 @@ gulp.task( 'minify', [ 'hint', 'clean-javascripts' ], function() {
     return gulp.src( config.jsSrc )
         .pipe( $.plumber() )
         .pipe( $.uglify( { mangle: true } ) )
-        .pipe( $.rename( { extname: '.min.js' } ) )
+        .pipe( $.rename( 'jquery.stringtoslug.min.js' ) )
         .pipe( gulp.dest( config.jsDest ) )
 } );
 

@@ -1,218 +1,744 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Samples jQuery Plugin stringToSlug | Leo Caseiro</title>
-<meta http-equiv="content-language" content="pt-br" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Samples jQuery Plugin stringToSlug | Leo Caseiro</title>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="./bower_components/speakingurl/speakingurl.min.js"></script>
-<script type="text/javascript" src="jquery.stringToSlug.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
-<script type="text/javascript">
-	$(document).ready( function() {
-		$("#string").stringToSlug({
-			callback: function(text){ console.log(text); }
-		});
-	});
-</script>
-<style>
-	body{font-family:Verdana, Tahoma, sans-serif; font-size:14px;}
-	.code{font-family:"Courier New", Courier, monospace;}
-</style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+    <!-- Custom Style -->
+    <style rel="stylesheet">
+    .sts-jumbotron { color: #fff;
+        background: #6d0019;
+        background: -moz-linear-gradient(45deg,  #6d0019 0%, #8f0222 56%, #a90329 100%);
+        background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#6d0019), color-stop(56%,#8f0222), color-stop(100%,#a90329));
+        background: -webkit-linear-gradient(45deg,  #6d0019 0%,#8f0222 56%,#a90329 100%);
+        background: -o-linear-gradient(45deg,  #6d0019 0%,#8f0222 56%,#a90329 100%);
+        background: -ms-linear-gradient(45deg,  #6d0019 0%,#8f0222 56%,#a90329 100%);
+        background: linear-gradient(45deg,  #6d0019 0%,#8f0222 56%,#a90329 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d0019', endColorstr='#a90329',GradientType=1 );
+    }
+    .sts-jumbotron p { margin:30px; auto }
+    .jumbotron .sts-title { font-size: 3.5em; }
+    .jumbotron .sts-subtitle {font-size: 1.5em; }
+    .btn {
+        border-radius: 2px;
+    }
+    .btn-outline {
+        background-color: transparent;
+        color: inherit;
+        transition: all .5s;
+    }
+
+    .btn-white.btn-outline {
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .btn-white.btn-outline:hover {
+        color: #660000;
+        border-color: #fff;
+        background-color: #fff;
+    }
+    .prettyprint ol.linenums > li { list-style-type: decimal !important; }
+    pre.prettyprint { border-color: #ccc !important; }
+
+    .sts-section{margin-bottom: 80px;}
+        legend {color: #aaa;}
+
+    .nav-tabs>li a {
+        bottom: -2px;
+    }
+    .nav-tabs>li.active a,
+    .nav-tabs>li.active a:focus {
+        background-color: #f5f5f5;
+        height: 44px;
+    }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
+<div class="jumbotron sts-jumbotron text-center">
+    <div class="container">
+        <h1 class="sts-title"><i class="fa fa-exchange"></i> jQuery StringToSlug</h1>
+        <p class="sts-subtitle">Convert any string into slugs and bind using jQuery</p>
+        <p>
+            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v1.3.0.zip" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.0 (zip)</a>
+            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v1.3.0.tar.gz" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.0 (tar.gz)</a>
+            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug" class="btn btn-lg btn-white btn-outline"> <i class="fa fa-github"></i> View on Github</a>
+        </p>
 
-<div style="background-color:#fff000; padding:2px 10px;">
-	<h4>StringToSlug Demo</h4>
-	<p><strong>Change:</strong> <input id="string" size="100" type="text" value="Change the content of this field! And view the text with red background Preview!" />
-	<p><strong>Preview:</strong> <span id="permalink" style="background-color:#880000; color:#fff; padding:3px;">change-the-content-of-this-field-and-view-the-text-with-red-background-preview</span></p>
+        <p class="sts-gh-buttons">
+            <!-- Star -->
+            <iframe src="https://ghbtns.com/github-btn.html?user=leocaseiro&repo=jQuery-Plugin-stringToSlug&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+            <!-- Watch -->
+            <iframe src="https://ghbtns.com/github-btn.html?user=leocaseiro&repo=jQuery-Plugin-stringToSlug&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+            <!-- Fork -->
+            <iframe src="https://ghbtns.com/github-btn.html?user=leocaseiro&repo=jQuery-Plugin-stringToSlug&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+            <!-- Follow -->
+            <iframe src="https://ghbtns.com/github-btn.html?user=leocaseiro&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+
+            <!-- Follow Twitter -->
+            <a href="https://twitter.com/leocaseiro" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @leocaseiro</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <section class="sts-section" id="js-getting-started">
+                <h2 class="page-header">Getting Started</h2>
+                <h4>Install via Bower <small><sup>Installing via bower will get jQuery and SpeakingURL as well</sup></small></h4>
+                <div class="highlight">
+                    <pre><code>bower install --save jquery.stringtoslug</code></pre>
+                </div><br>
+                <h4>Add jQuery, SpeakingURL and stringToSlug to your html</h4>
+                <div class="highlight"><pre><code><xmp><script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/speakingurl/dist/speakingurl.min.js"></script>
+<script src="./bower_components/jquery.stringtoslug/dist/jquery.stringtoslug.min.js"></script></xmp></code></pre>
+                </div>
+            </section>
+
+            <section class="sts-section" id="js-basic-usage">
+                <h2 class="page-header">Basic Usage</h2>
+                <div class="alert alert-warning" role="alert">Make sure you define your language to SpeakingURL before use it.</div><br>
+                <p>English / Lating by default</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="input-basic-usage-from">From </label>
+                            <input type="text" class="basic-usage form-control" id="input-basic-usage-from" value="Replace the content of this input and check the preview text bellow!">
+                        </div>
+                        <div class="form-group">
+                            <label for="permalink">To</label>
+                            <input type="text" readonly disabled class="form-control" id="permalink" placeholder="Preview here" value="replace-the-content-of-this-input-and-check-the-preview-text-bellow">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#basic-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#basic-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="basic-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" class="basic-usage" />
+<input type="text" id="permalink" /></xmp></pre>
+                        </div><!-- tab-pane -->
+                        <div role="tabpanel" class="tab-pane active" id="basic-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $(".basic-usage").stringToSlug();
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-options">
+                <h2 class="page-header">Options</h2>
+                <p>All options are optional and will work as default following the table bellow:</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">StringToSlug Options</div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Option</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Default</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">setEvents</th>
+                                    <td>string</td>
+                                    <td>jQuery events to bind</td>
+                                    <td><code>'keyup keydown blur'</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">getPut</th>
+                                    <td>string</td>
+                                    <td>The jQuery selector that will output the slugged string</td>
+                                    <td><code>'#permalink</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">space</th>
+                                    <td>string</td>
+                                    <td>Separator char that will be replaced for every space</td>
+                                    <td><code>'-'</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">prefix</th>
+                                    <td>string</td>
+                                    <td>A prefix that will be concatenated before string slugged</td>
+                                    <td><code>''</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">suffix</th>
+                                    <td>string</td>
+                                    <td>A suffix that will be concatenated before string slugged</td>
+                                    <td><code>''</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">replace</th>
+                                    <td>regExp</td>
+                                    <td>A Regular Expression to replace/remove the string</td>
+                                    <td><code>''</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AND</th>
+                                    <td>string</td>
+                                    <td>The default value of <strong>&</strong> which normally means <strong>and</strong></td>
+                                    <td><code>'and'</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">options</th>
+                                    <td>object | string</td>
+                                    <td>This option is used to custom the <a href="http://pid.github.io/speakingurl/">SpeakingURL</a> library</td>
+                                    <td><code>{}</code></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">callback</th>
+                                    <td>function</td>
+                                    <td>A callback function that will be called after every bind defined on <strong>setEvents</strong></td>
+                                    <td><code>false</code></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- table-responsive -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#basic-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="basic-usage-js">
+<pre class="prettyprint">
+$(document).ready( function() {
+    $(".basic-usage").stringToSlug({
+        setEvents: 'keyup keydown blur',
+        getPut: '#permalink',
+        space: '-',
+        prefix: '',
+        suffix: '',
+        replace: '',
+        AND: 'and',
+        options: {},
+        callback: false
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-setevents">
+                <h2 class="page-header">Set Events</h2>
+                <p>Use the option <strong>setEvents</strong> to choose events for bind</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-blur" value="Focus on this input and after blur it will be slugged">
+                        </div>
+                        <div class="form-group">
+                            <p class="input-blur-preview label label-danger">focus-on-this-input-and-after-blur-it-will-be-slugged</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#events-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#events-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="events-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" class="input-to-slug" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="events-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $(".input-to-slug").stringToSlug({
+        setEvents: 'blur
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-getput">
+                <h2 class="page-header">Set different output (getPut)</h2>
+                <p>Use the option <strong>getPut</strong> to choose an output. jQuery StringToSlug works for html elements or inputs as well</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with Twitter Bootstrap 3 <code>.alert.alert-info</code></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="input-basic-usage-from">Type something here:</label>
+                            <input type="text" class="basic-usage form-control" id="input-getput" value="Replace me with some dummy data">
+                        </div>
+                        <div class="form-group">
+                            <label>This example uses a Twitter Bootstrap 3 .alert.alert-info :</label>
+                            <div class="alert alert-info input-getput-preview">replace-me-with-some-dummy-data</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#getput-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#getput-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="getput-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<div class="alert alert-info"></div></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="getput-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        getPut: '.alert.alert-info'
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-space">
+                <h2 class="page-header">Set different separator (space)</h2>
+                <p>Use the option <strong>space</strong> to choose a separator replacement.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with underscore instead of dash</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-space" value="Replace me with some dummy data and check the separator">
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-space-preview">replace_me_with_some_dummy_data_and_check_the_separator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#space-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#space-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="space-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="space-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        space: '_'
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-prefix">
+                <h2 class="page-header">Set a Prefix</h2>
+                <p>Use the option <strong>prefix</strong> to choose a prefix.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with prefix <code>js-</code></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-prefix" value="Selector for JavaScript">
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-prefix-preview">js-selector-for-javascript</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#prefix-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#prefix-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="prefix-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="prefix-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        prefix: 'js-'
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-suffix">
+                <h2 class="page-header">Set a Suffix</h2>
+                <p>Use the option <strong>suffix</strong> to choose a suffix.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with suffix <code>js-</code></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-suffix" value="Suffix for images">
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-suffix-preview">suffix-for-images.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#suffix-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#suffix-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="suffix-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="suffix-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        suffix: 'js-'
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-replace">
+                <h2 class="page-header">replace</h2>
+                <p>Use the option <strong>replace</strong> to replace/remove some pattern.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example removing content between parentheses with <code>replace</code> and the regex <code>/\s?\([^\)]*\)/gi</code></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-replace" value="Product Example (Category)">
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-replace-preview">product-example</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#replace-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#replace-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="replace-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="replace-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        replace: /\s?\([^\)]*\)/gi,
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-and">
+                <h2 class="page-header">AND</h2>
+                <p>Use the option <strong>AND</strong> to choose a different replacement for <strong>&</strong>.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with and <code>AND</code> in Spanish (Español)</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-and" value="Él & Ella">
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-and-preview">el-y-ella</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#and-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#and-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="and-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="and-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        AND: 'y'
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-options">
+                <h2 class="page-header">options</h2>
+                <p>Use <strong>options</strong> to customize <strong><a href="http://pid.github.io/speakingurl/">SpeakinURL</a></strong>.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example with <code>options</code> from SpeakingURL changing the language to Arabic and using titleCase pattern</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-options" value="Text In Arabic: هذا هو الاختبار مع اللغة العربية With titleCase Patternة" />
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-options-preview">Text-In-Arabic-htha-hw-alakhtbar-ma-allghh-alarbyh-With-TitleCase-Pattern</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#options-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#options-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="options-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="options-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        options: {
+            lang: 'ar',
+            titleCase: true
+        }
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+
+            <section class="sts-section" id="js-callback">
+                <h2 class="page-header">callback</h2>
+                <p>Use <strong>callback</strong> to call a function after stringToSlug.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Example will print a warn on your developer tool as a <code>callback</code></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <input type="text" class="basic-usage form-control" id="input-callback" value="Open your Console from Developer Tools and Check the warning" />
+                        </div>
+                        <div class="form-group">
+                            <p class="label label-danger input-callback-preview">open-your-console-from-developer-tools-and-check-the-warning</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Code</div>
+                    <div class="panel-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#callback-usage-html" role="tab" data-toggle="tab">HTML</a></li>
+                            <li role="presentation" class="active"><a href="#callback-usage-js" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul><!-- tabs -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="callback-usage-html">
+<pre class="prettyprint">
+<xmp><input type="text" />
+<p id="permalink"></p></xmp></pre>
+                            </div><!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane active" id="callback-usage-js">
+<pre class="prettyprint">$(document).ready( function() {
+    $('[type="text"]').stringToSlug({
+        callback: function(text) {
+            console.warn('This warn is a callback: ' + text);
+        }
+    });
+});</pre>
+                            </div><!-- tab-pane -->
+                        </div><!-- tab-content -->
+                    </div><!-- panel-body -->
+                </div><!-- panel -->
+            </section>
+        </div>
+        <div class="col-sm-3 scrollspy">
+            <nav class="hidden-print hidden-xs hidden-sm affix-top" data-spy="affix">
+                <ul class="nav">
+                    <li><a href="#js-getting-started">Getting Started</a></li>
+                    <li><a href="#js-basic-usage">Basic Usage</a></li>
+                    <li><a href="#js-options">Options</a>
+                    <ul class="nav">
+                        <li><a href="#js-setevents">setEvents</a></li>
+                        <li><a href="#js-getput">getPut</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                <a class="back-to-top" href="#top">
+                    Back to top
+                </a>
+            </nav>
+        </div>
+    </div>
 </div>
 
-<div class="sample">
-	<h4>Default Usage:</h4>
-	<pre><div class="code"><em>
-	/**
-	* Default Events: Blur, KeyUp e KeyDown:
-	* Default Get Put: #permalink
-	* Default Space Replacement: - (hiphen)
-	* Default &(AND) Char Replacement: and
-	*/
-	</em>
-	$(document).ready( function() {
-		$(&quot;#string&quot;).stringToSlug();
-	});
-	</div>
-	<br />
-	</pre>
-</div>
-
-<div class="sample">
-	<h4>FINALLY: Using the API doesn't need output (added on 1.3.1)</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		var text = "I'd like to invite my fiancé";
-		_stringToSlug_API( text );
-		console.log(text);
-	});
-	</pre>
-
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		var text = "él & ella!";
-		result = _stringToSlug_API( text, options = { 'AND': 'y', 'space': '_', suffix: '.jpg' } );
-		console.log(result); //returns: el_y_ella.jpg
-	});
-	</pre>
-</div>
-
-<div class="sample">
-	<h4>The values Default at Plugin Usage:</h4>
-	<pre class="brush: javascript"><div class="code">
-	$(document).ready( function() {
-		$(&quot;#title&quot;).stringToSlug({
-			setEvents: &#039;keyup keydown blur&#039;,
-			getPut: &#039;#permalink&#039;,
-			space: &#039;-&#039;,
-			prefix: &#039;&#039;,
-			suffix: &#039;&#039;,
-			replace: &#039;&#039;,
-			AND: &#039;and&#039;,
-			callback: false
-		});
-	});
-	</div>
-	<br />
-	</pre>
-
-<div class="sample">
-	<h4>Other(s) Event(s) Usage:</h4>
-	<p><small>To change the events, we must insert one or more events separated by space:</small></p>
-	<pre class="brush: javascript">
-	<div class="code">
-	$(document).ready( function() {
-		//Only Event Blur
-		$(&quot;#only-blur-event&quot;).stringToSlug({
-			setEvents: &quot;blur&quot;
-		});
-
-		//2 Events or More
-		//This sample, Usage Events: KeyUp and KeyDown
-		$(&quot;#keyup-and-keydown-events&quot;).stringToSlug({
-			setEvents: &quot;keyup keydown&quot;
-		});
-	});
-	</div>
-	<br />
-	</pre>
-</div>
-
-<div class="sample">
-	<h4>Other Get Put Preview Usage:</h4>
-	<pre class="brush: javascript"><div class="code">
-	$(document).ready( function() {
-		//Previem in all texarea
-		$(&quot;input[name=string]&quot;).stringToSlug({
-			getPut: &quot;textarea&quot;
-		});
-
-		//Preview in all elements preview class
-		$(&quot;#input[name=string]&quot;).stringToSlug({
-			getPut: &quot;.class&quot;
-		});
-	});
-	</div>
-	<br />
-	</pre>
-</div>
-
-<div class="sample">
-	<h4>Replace hiphen by other char Usage:</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		//Replace by underscore
-		$(&quot;#input[name=string]&quot;).stringToSlug({
-			space: &quot;_&quot;
-		});
-	});
-	</pre>
-</div>
-
-<div class="sample">
-	<h4>Calls a given callback function:</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		//Callback function in use
-		$(&quot;#input[name=string]&quot;).stringToSlug({
-			callback: function(slug){ console.log(slug);
-		});
-	});
-	</pre>
-</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">jQuery Plugin StringToSlug create by <a title="Create by Leo Caseiro" href="http://leocaseiro.com.br/">@leocaseiro</a></p>
+    </div>
+</footer>
 
 
-<div class="sample">
-	<h4>Remove text between parentheses:</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		//Remove between parentheses
-		$(&quot;#input['no-parentheses']&quot;).stringToSlug({
-			replace: /\s?\([^\)]*\)/gi
-		});
-	});
-	</pre>
-</div>
 
-<div class="sample">
-	<h4>Replace &(and) CHAR (added on 1.3.0):</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		//Replace & to e (Portuguese)
-		$(&quot;#input&quot;).stringToSlug({
-			AND: 'e'
-		});
 
-		//Replace & to Y (Spanish)
-		$(&quot;#input&quot;).stringToSlug({
-			AND: 'y'
-		});
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Dependency SpeakingURL -->
+    <script src="./bower_components/speakingurl/speakingurl.min.js"></script>
+    <!-- stringToSlug -->
+    <script type="text/javascript" src="dist/jquery.stringToSlug.min.js"></script>
 
-		//Replace & to Empty
-		$(&quot;#input&quot;).stringToSlug({
-			AND: ''
-		});
+    <!-- Google Prettify  -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
-		//Replace & to hyphen
-		$(&quot;#input&quot;).stringToSlug({
-			AND: '-'
-		});
-	});
-	</pre>
-</div>
+    <script type="text/javascript">
+        $(document).ready( function() {
 
-<div class="sample">
-	<h4>Set a prefix, like an URL:</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		$(&quot;#input&quot;).stringToSlug({
-			prefix: 'http://'
-		});
-	});
-	</pre>
-</div>
+            $(".basic-usage").stringToSlug();
+            $("#input-blur").stringToSlug({
+                setEvents: 'blur',
+                getPut: '.input-blur-preview'
+            });
+            $("#input-getput").stringToSlug({
+                getPut: '.input-getput-preview'
+            });
+            $("#input-space").stringToSlug({
+                space: '_',
+                getPut: '.input-space-preview'
+            });
+            $("#input-prefix").stringToSlug({
+                prefix: 'js-',
+                getPut: '.input-prefix-preview'
+            });
+            $("#input-suffix").stringToSlug({
+                suffix: '.jpg',
+                getPut: '.input-suffix-preview'
+            });
+            $("#input-replace").stringToSlug({
+                replace: /\s?\([^\)]*\)/gi,
+                getPut: '.input-replace-preview'
+            });
+            $("#input-and").stringToSlug({
+                AND: 'y',
+                getPut: '.input-and-preview'
+            });
+            $("#input-options").stringToSlug({
+                options: {
+                    lang: 'ar',
+                    titleCase: true
+                },
+                getPut: '.input-options-preview'
+            });
+            $("#input-callback").stringToSlug({
+                callback: function(text) {
+                    console.warn('This warn is a callback: ' + text);
+                },
+                getPut: '.input-calback-preview'
+            });
 
-<div class="sample">
-	<h4>Set a suffix, like an extension:</h4>
-	<pre class="brush: javascript">
-	$(document).ready( function() {
-		$(&quot;#input&quot;).stringToSlug({
-			suffix: '.jpg'
-		});
-	});
-	</pre>
-</div>
-
-<br /><br />
-<em><small>jQuery Plugin StringToSlug create by <a title="Create by Leo Caseiro" href="http://leocaseiro.com.br/">@leocaseiro</a></small></em>
+            $('[data-spy="affix"]').affix({
+                offset: {
+                    top: $('[data-spy="affix"]').offset().top
+                }
+            });
+        });
+    </script>
 </body>
 </html>
