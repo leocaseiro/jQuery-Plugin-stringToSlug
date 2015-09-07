@@ -9,9 +9,8 @@
  * v2 Uses [SpeakingURL](https://github.com/pid/speakingurl)
  *
  *
- * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
+ * Released under the MIT license
+ * http://www.opensource.org/licenses/mit-license.php
  */
 var _stringToSlug_API = function( text, options ) {
     'use strict';
