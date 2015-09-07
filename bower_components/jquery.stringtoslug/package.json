@@ -1,0 +1,57 @@
+{
+  "name": "jquery.stringtoslug",
+  "version": "2.0.0",
+  "description": "Convert a STRING to a SLUG in any language",
+  "main": "gulp.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "permalink",
+    "string",
+    "text",
+    "slug",
+    "convert",
+    "transform",
+    "generate",
+    "sanitize",
+    "unicode",
+    "encode",
+    "latin",
+    "chars"
+  ],
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leocaseiro/jQuery-Plugin-stringToSlug.git"
+  },
+  "author": "Leo Caseiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues"
+  },
+  "homepage": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug",
+  "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-if": "^1.2.5",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-run": "^1.6.10",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^1.4.0",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.9",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-qunit": "^0.1.5",
+    "qunitjs": "^1.19.0"
+  },
+  "dependencies": {
+    "gulp-header": "^1.7.1"
+  }
+}
