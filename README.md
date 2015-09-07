@@ -4,46 +4,79 @@ jQuery Plugin stringToSlug
 A Simple Plugin in jQuery JavaScript Framework.
 The stringToSlug converts any string to SLUG supporting all Languages using or not accent and special chars as well.
 
+Documentation
+--------------
+Full Documentation with Examples at [http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/](http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/)
+
+
 Default Usage:
+--------------
+
+```javascript
+$(document).ready( function() {
+    $("#string").stringToSlug();
+});
+```
+
+
+Install via Bower:
 -----------------
+```
+bower install --save jquery.stringtoslug
+```
 
-    $(document).ready( function() {
-        $("#string").stringToSlug();
-    });
+[Download](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.zip):
+-----------------
+```
+[Click here to download the latest version](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.zip)
+```
 
-
- [More in github page](http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/)
-
-
-The plugin removes special characters, converts the string to lowercase and defines a space character. You can set a prefix and/or suffix before to convert it.
+Description
+--------------
+The stringToSlug uses a third-party library speakingURL that removes special characters, converts the string to lowercase. The StringToSlug also defines a space character and set optionally a prefix and/or a suffix for your slug.
 
 Transforming a string into a url-friendly permalink.
 You can use the plugin to display a view in html elements or form inputs.
 
-It is the only plugin that removes the stress of words, exchanging letters marked by unaccented letters.
+Contributing
+------------
+The StringToSlug uses [**NodeJS with NPM**](http://nodejs.org/) and **Gulp** for compile, **Jasmine** and **Karma** for testing:
 
-Features version 1.0.0:
------------------
-* Set one or more events to work (Default events are keyup, keydown and blur)
-* Set get input or element to view the slug (Ex: input[type=hidden] or span#slug)
-* Set character to space (Ex: hiphen or underscore)
+To install **Bower** and **Gulp** globally, use **npm install -g**:
+```shell
+npm install -g bower
+npm install -g gulp
+```
 
-Features version 1.0.1:
------------------
-* a little upgrade for win-1250. Some czech letters more (by Ales)
+Install all dependencies with NPM and make sure Bower is up to date:
+```shell
+npm install
+bower install
+```
 
-Features available with version 1.2.0
------------------
-* Set prefix (Ex: prefix table "tbl_")
-* Set suffix (Ex: file extension ".jpg")
-* Define replace regExpress before the slug be generated (Ex: remove text in parentheses)
+List all tasks with gulp
+```shell
+gulp
+```
 
-Features available with version 1.2.1
------------------
-* Fixed error when use '_' or other char in space char
-* callback implemented // eq: function(text){ console.log(text); }
+Gulp Watcher for Development
+```shell
+gulp watcher
+```
 
-Features available with version 1.3.0
------------------
-* Replace AND char
-* Fixed quote error following the ISSUE: Undefined chars #4
+Gulp Tests for Tests
+```shell
+gulp tests
+```
+
+Gulp Build to Compile
+```shell
+gulp build
+```
+
+
+License
+------------
+Copyright (c) 2009-2015 Leo Caseiro. This is a free software is licensed under the MIT License.
+
+[Leo Caseiro](http://about.me/leocaseiro)

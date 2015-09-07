@@ -28,7 +28,7 @@
     "url": "git+https://github.com/leocaseiro/jQuery-Plugin-stringToSlug.git"
   },
   "author": "Leo Caseiro",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues"
   },

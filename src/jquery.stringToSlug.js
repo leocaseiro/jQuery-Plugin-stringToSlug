@@ -1,9 +1,9 @@
 /*
  * jQuery stringToSlug plug-in 2.0.0
  *
- * Plugin HomePage http://leocaseiro.com.br/jquery-plugin-string-to-slug/
+ * Documentation http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/
  *
- * Copyright (c) 2009 Leo Caseiro
+ * Copyright (c) 2009-2015 Leo Caseiro
  *
  * v1 Based on [Edson Hilios](http://www.edsonhilios.com.br/) Algorithm
  * v2 Uses [SpeakingURL](https://github.com/pid/speakingurl)
