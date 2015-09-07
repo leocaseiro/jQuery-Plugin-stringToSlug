@@ -4,6 +4,7 @@ function setupBefore() {
 
 function teardownAfter() {
     $('#text').remove();
+    $('#permalink').remove();
 }
 
 function fromToTest(preText, resultExpect, params) {
@@ -96,4 +97,15 @@ test( "“ and ” (Undefined chars)", function() {
 	var resultExpect 	= 'a-text-betweet-quotes-and-are-not-going-to-be-a-problem';
 
 	fromToTest(preText, resultExpect);
+});
+
+test( "callback don't bind", function() {
+    var params = {
+        callback: function(){console.log('callback as console');}
+    };
+
+	var preText 		= "A text betweet quotes “ and ” are not going to be a problem!";
+	var resultExpect 	= 'a-text-betweet-quotes-and-are-not-going-to-be-a-problem';
+
+	fromToTest(preText, resultExpect, params);
 });
