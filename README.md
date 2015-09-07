@@ -27,9 +27,7 @@ bower install --save jquery.stringtoslug
 
 [Download](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.zip):
 -----------------
-```
 [Click here to download the latest version](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.zip)
-```
 
 Description
 --------------
