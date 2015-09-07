@@ -437,7 +437,7 @@ $(document).ready( function() {
                 <h2 class="page-header">Set a Suffix</h2>
                 <p>Use the option <strong>suffix</strong> to choose a suffix.</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example with suffix <code>js-</code></div>
+                    <div class="panel-heading">Example with suffix <code>.jpg</code></div>
                     <div class="panel-body">
                         <div class="form-group">
                             <input type="text" class="basic-usage form-control" id="input-suffix" value="Suffix for images">
@@ -693,58 +693,6 @@ $(document).ready( function() {
 <!-- Google Prettify  -->
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
-<script type="text/javascript">
-    $(document).ready( function() {
-
-        $(".basic-usage").stringToSlug();
-        $("#input-blur").stringToSlug({
-                                          setEvents: 'blur',
-                                          getPut: '.input-blur-preview'
-                                      });
-        $("#input-getput").stringToSlug({
-                                            getPut: '.input-getput-preview'
-                                        });
-        $("#input-space").stringToSlug({
-                                           space: '_',
-                                           getPut: '.input-space-preview'
-                                       });
-        $("#input-prefix").stringToSlug({
-                                            prefix: 'js-',
-                                            getPut: '.input-prefix-preview'
-                                        });
-        $("#input-suffix").stringToSlug({
-                                            suffix: '.jpg',
-                                            getPut: '.input-suffix-preview'
-                                        });
-        $("#input-replace").stringToSlug({
-                                             replace: /\s?\([^\)]*\)/gi,
-                                             getPut: '.input-replace-preview'
-                                         });
-        $("#input-and").stringToSlug({
-                                         AND: 'y',
-                                         getPut: '.input-and-preview'
-                                     });
-        $("#input-options").stringToSlug({
-                                             options: {
-                                                 lang: 'ar',
-                                                 titleCase: true
-                                             },
-                                             getPut: '.input-options-preview'
-                                         });
-        $("#input-callback").stringToSlug({
-                                              callback: function(text) {
-                                                  console.warn('This warn is a callback: ' + text);
-                                              },
-                                              getPut: '.input-callback-preview'
-                                          });
-
-        $('[data-spy="affix"]').affix({
-                                          offset: {
-                                              top: $('[data-spy="affix"]').offset().top,
-                                              bottom: 120
-                                          }
-                                      } ).css('top','0');
-    });
-</script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
