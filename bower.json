@@ -13,7 +13,11 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "tests"
+    "tests",
+    "gulp.config.js",
+    "gulpfile.js",
+    "karma.conf.js",
+    "stringToSlug.jquery.json"
   ],
   "keywords": [
     "permalink",
