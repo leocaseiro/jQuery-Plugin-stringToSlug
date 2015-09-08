@@ -38,15 +38,15 @@ You can use the plugin to display a view in html elements or form inputs.
 
 Contributing
 ------------
-The StringToSlug uses [**NodeJS with NPM**](http://nodejs.org/) and **Gulp** for compile, **Jasmine** and **Karma** for testing:
+The StringToSlug uses [**NodeJS with NPM**](http://nodejs.org/) and [**Gulp**](http://gulpjs.com/) for compile, [**QUnit**](https://qunitjs.com/) and [**Karma**](http://karma-runner.github.io/) for testing:
 
 To install **Bower** and **Gulp** globally, use **npm install -g**:
 ```shell
-npm install -g bower
-npm install -g gulp
+npm install bower -g
+npm install gulp -g
 ```
 
-Install all dependencies with NPM and make sure Bower is up to date:
+Download and Install all dependencies with NPM and make sure Bower is up to date:
 ```shell
 npm install
 bower install
@@ -62,7 +62,7 @@ Gulp Watcher for Development
 gulp watcher
 ```
 
-Gulp Tests for Tests
+Gulp Tests for Testing
 ```shell
 gulp tests
 ```
