@@ -62,6 +62,17 @@
             background-color: #f5f5f5;
             height: 44px;
         }
+        .nav.nav-subnav>li>a:hover,
+        .nav.nav-subnav>li.active>a {
+            background-color: transparent;
+            color: black;
+        }
+        .nav.nav-subnav>li.active>a {
+            font-weight: bold;
+        }
+        .nav.nav-subnav>li>a {
+            padding: 7px 15px 7px 25px;
+        }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -103,7 +114,7 @@
         <div class="col-sm-9">
             <section class="sts-section" id="js-getting-started">
                 <h2 class="page-header">Getting Started</h2>
-                <h4>Install via Bower <small><sup>Installing via bower will get jQuery and SpeakingURL as well</sup></small></h4>
+                <h4>Install via Bower <small><sup>Installing StringToSlug via Bower will also give you jQuery and SpeakingURL</sup></small></h4>
                 <div class="highlight">
                     <pre><code>bower install --save jquery.stringtoslug</code></pre>
                 </div><br>
@@ -117,18 +128,18 @@
 
             <section class="sts-section" id="js-basic-usage">
                 <h2 class="page-header">Basic Usage</h2>
-                <div class="alert alert-warning" role="alert">Make sure you define your language to SpeakingURL before use it.</div><br>
-                <p>English / Lating by default</p>
+                <div class="alert alert-warning" role="alert">Make sure you define your language to SpeakingURL before you use it.</div><br>
+                <p>English / Latin by default</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example</div>
                     <div class="panel-body">
                         <div class="form-group">
                             <label for="input-basic-usage-from">From </label>
-                            <input type="text" class="basic-usage form-control" id="input-basic-usage-from" value="Replace the content of this input and check the preview text bellow!">
+                            <input type="text" class="basic-usage form-control" id="input-basic-usage-from" value="Replace the content of this input and check the preview text below!">
                         </div>
                         <div class="form-group">
                             <label for="permalink">To</label>
-                            <input type="text" readonly disabled class="form-control" id="permalink" placeholder="Preview here" value="replace-the-content-of-this-input-and-check-the-preview-text-bellow">
+                            <input type="text" readonly disabled class="form-control" id="permalink" placeholder="Preview here" value="replace-the-content-of-this-input-and-check-the-preview-text-below">
                         </div>
                     </div>
                 </div>
@@ -159,16 +170,16 @@
             </section>
 
             <section class="sts-section" id="js-options">
-                <h2 class="page-header">Options</h2>
-                <p>All options are optional and will work as default following the table bellow:</p>
+                <h2 class="page-header">Settings</h2>
+                <p>All settings are optional and work as a default as set out in the table below:</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">StringToSlug Options</div>
+                    <div class="panel-heading">StringToSlug Settings</div>
                     <div class="panel-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>Option</th>
+                                    <th>Setting</th>
                                     <th>Type</th>
                                     <th>Description</th>
                                     <th>Default</th>
@@ -184,8 +195,8 @@
                                 <tr>
                                     <th scope="row">getPut</th>
                                     <td>string</td>
-                                    <td>The jQuery selector that will output the slugged string</td>
-                                    <td><code>'#permalink</code></td>
+                                    <td>The jQuery selector that will output the converted string (slug)</td>
+                                    <td><code>'#permalink'</code></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">space</th>
@@ -196,31 +207,31 @@
                                 <tr>
                                     <th scope="row">prefix</th>
                                     <td>string</td>
-                                    <td>A prefix that will be concatenated before string slugged</td>
+                                    <td>A prefix that will be concatenated in front of the slug</td>
                                     <td><code>''</code></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">suffix</th>
                                     <td>string</td>
-                                    <td>A suffix that will be concatenated before string slugged</td>
+                                    <td>A suffix that will be concatenated at the end of the slug</td>
                                     <td><code>''</code></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">replace</th>
                                     <td>regExp</td>
-                                    <td>A Regular Expression to replace/remove the string</td>
+                                    <td>A regular expression to replace/remove the string</td>
                                     <td><code>''</code></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">AND</th>
                                     <td>string</td>
-                                    <td>The default value of <strong>&</strong> which normally means <strong>and</strong></td>
+                                    <td>The default value of <strong>'&'</strong> which normally means <strong>'and'</strong></td>
                                     <td><code>'and'</code></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">options</th>
                                     <td>object | string</td>
-                                    <td>This option is used to custom the <a href="http://pid.github.io/speakingurl/">SpeakingURL</a> library</td>
+                                    <td>Use <strong>options</strong> to customize the <a href="http://pid.github.io/speakingurl/">SpeakingURL</a> library</td>
                                     <td><code>{}</code></td>
                                 </tr>
                                 <tr>
@@ -266,15 +277,15 @@ $(document).ready( function() {
 
             <section class="sts-section" id="js-setevents">
                 <h2 class="page-header">Set Events</h2>
-                <p>Use the option <strong>setEvents</strong> to choose events for bind</p>
+                <p>Use the setting <strong>setEvents</strong> to choose events to bind</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <input type="text" class="basic-usage form-control" id="input-blur" value="Focus on this input and after blur it will be slugged">
+                            <input type="text" class="basic-usage form-control" id="input-blur" value="Focus on this input and after blur it will be converted into a slug">
                         </div>
                         <div class="form-group">
-                            <p class="input-blur-preview label label-danger">focus-on-this-input-and-after-blur-it-will-be-slugged</p>
+                            <p class="input-blur-preview label label-danger">focus-on-this-input-and-after-blur-it-will-be-converted-into-a-slug</p>
                         </div>
                     </div>
                 </div>
@@ -307,8 +318,8 @@ $(document).ready( function() {
             </section>
 
             <section class="sts-section" id="js-getput">
-                <h2 class="page-header">Set different output (getPut)</h2>
-                <p>Use the option <strong>getPut</strong> to choose an output. jQuery StringToSlug works for html elements or inputs as well</p>
+                <h2 class="page-header">Set a different selector for the preview (getPut)</h2>
+                <p>Use the setting <strong>getPut</strong> to choose an output. jQuery StringToSlug works for html elements or inputs</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example with Twitter Bootstrap 3 <code>.alert.alert-info</code></div>
                     <div class="panel-body">
@@ -351,10 +362,10 @@ $(document).ready( function() {
             </section>
 
             <section class="sts-section" id="js-space">
-                <h2 class="page-header">Set different separator (space)</h2>
-                <p>Use the option <strong>space</strong> to choose a separator replacement.</p>
+                <h2 class="page-header">Set a different separator character for spaces</h2>
+                <p>Use the setting <strong>space</strong> to choose a separator replacement</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example with underscore instead of dash</div>
+                    <div class="panel-heading">Example with <strong>underscore</strong> instead of dash</div>
                     <div class="panel-body">
                         <div class="form-group">
                             <input type="text" class="basic-usage form-control" id="input-space" value="Replace me with some dummy data and check the separator">
@@ -394,7 +405,7 @@ $(document).ready( function() {
 
             <section class="sts-section" id="js-prefix">
                 <h2 class="page-header">Set a Prefix</h2>
-                <p>Use the option <strong>prefix</strong> to choose a prefix.</p>
+                <p>Use the setting <strong>prefix</strong> to choose a prefix</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example with prefix <code>js-</code></div>
                     <div class="panel-body">
@@ -436,7 +447,7 @@ $(document).ready( function() {
 
             <section class="sts-section" id="js-suffix">
                 <h2 class="page-header">Set a Suffix</h2>
-                <p>Use the option <strong>suffix</strong> to choose a suffix.</p>
+                <p>Use the setting <strong>suffix</strong> to choose a suffix</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example with suffix <code>.jpg</code></div>
                     <div class="panel-body">
@@ -478,7 +489,7 @@ $(document).ready( function() {
 
             <section class="sts-section" id="js-replace">
                 <h2 class="page-header">replace</h2>
-                <p>Use the option <strong>replace</strong> to replace/remove some pattern.</p>
+                <p>Use the setting <strong>replace</strong> to replace/remove some pattern</p>
                 <div class="panel panel-default">
                     <div class="panel-heading">Example removing content between parentheses with <code>replace</code> and the regex <code>/\s?\([^\)]*\)/gi</code></div>
                     <div class="panel-body">
@@ -520,9 +531,9 @@ $(document).ready( function() {
 
             <section class="sts-section" id="js-and">
                 <h2 class="page-header">AND</h2>
-                <p>Use the option <strong>AND</strong> to choose a different replacement for <strong>&</strong>.</p>
+                <p>Use the setting <strong>AND</strong> to choose a different replacement for <strong>'&'</strong></p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example with and <code>AND</code> in Spanish (Español)</div>
+                    <div class="panel-heading">Example with <code>AND</code> in Spanish (Español)</div>
                     <div class="panel-body">
                         <div class="form-group">
                             <input type="text" class="basic-usage form-control" id="input-and" value="Él & Ella">
@@ -564,7 +575,7 @@ $(document).ready( function() {
                 <h2 class="page-header">options</h2>
                 <p>Use <strong>options</strong> to customize <strong><a href="http://pid.github.io/speakingurl/">SpeakinURL</a></strong>.</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example with <code>options</code> from SpeakingURL changing the language to Arabic and using titleCase pattern</div>
+                    <div class="panel-heading">Example with <code>options</code> from SpeakingURL defining the language to <i>Arabic</i> and using <i>titleCase</i> pattern</div>
                     <div class="panel-body">
                         <div class="form-group">
                             <input type="text" class="basic-usage form-control" id="input-options" value="Text In Arabic: هذا هو الاختبار مع اللغة العربية With titleCase Pattern" />
@@ -609,7 +620,7 @@ $(document).ready( function() {
                 <h2 class="page-header">callback</h2>
                 <p>Use <strong>callback</strong> to call a function after stringToSlug.</p>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Example will print a warn on your developer tool as a <code>callback</code></div>
+                    <div class="panel-heading">Example will print a warning on your developer tool as a <code>callback</code></div>
                     <div class="panel-body">
                         <div class="form-group">
                             <input type="text" class="basic-usage form-control" id="input-callback" value="Open your Console from Developer Tools and Check the warning" />
@@ -654,17 +665,20 @@ $(document).ready( function() {
                 <ul class="nav">
                     <li><a href="#js-getting-started">Getting Started</a></li>
                     <li><a href="#js-basic-usage">Basic Usage</a></li>
-                    <li><a href="#js-options">Options</a></li>
-                    <li><a href="#js-setevents">Options: setEvents</a></li>
-                    <li><a href="#js-getput">Options: getPut</a></li>
-                    <li><a href="#js-space">Options: space</a></li>
-                    <li><a href="#js-prefix">Options: prefix</a></li>
-                    <li><a href="#js-suffix">Options: suffix</a></li>
-                    <li><a href="#js-replace">Options: replace</a></li>
-                    <li><a href="#js-and">Options: AND</a></li>
-                    <li><a href="#js-options-options">Options: options</a></li>
-                    <li><a href="#js-callback">Options: callback</a></li>
-                </ul>
+                    <li><a href="#js-options">Settings</a>
+                    <ul class="nav nav-subnav">
+                        <li><a href="#js-setevents">setEvents</a></li>
+                        <li><a href="#js-getput">getPut</a></li>
+                        <li><a href="#js-space">space</a></li>
+                        <li><a href="#js-prefix">prefix</a></li>
+                        <li><a href="#js-suffix">suffix</a></li>
+                        <li><a href="#js-replace">replace</a></li>
+                        <li><a href="#js-and">AND</a></li>
+                        <li><a href="#js-options-options">options</a></li>
+                        <li><a href="#js-callback">callback</a></li>
+                    </ul>
+                    </li>
+                </ul><br>
                 <a class="back-to-top" href="#top">
                     Back to top
                 </a>
