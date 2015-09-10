@@ -1,8 +1,8 @@
 jQuery Plugin stringToSlug
 =============
 
-A Simple Plugin in jQuery JavaScript Framework.
-The stringToSlug converts any string to SLUG supporting all Languages using or not accent and special chars as well.
+A simple plugin in jQuery to create a URL.
+The stringToSlug converts string in any Language, including those with accents and special caracheteres, to a SLUG.
 
 Documentation
 --------------
@@ -31,14 +31,14 @@ bower install --save jquery.stringtoslug
 
 Description
 --------------
-The stringToSlug uses a third-party library speakingURL that removes special characters, converts the string to lowercase. The StringToSlug also defines a space character and set optionally a prefix and/or a suffix for your slug.
+The stringToSlug uses a third-party library called [speakingURL](http://pid.github.io/speakingurl/) that removes special characters and converts the string to lowercase. The **StringToSlug** replaces spaces with space characteres(separator) and offers the option to add a prefix and/or a suffix for your slug.
 
 Transforming a string into a url-friendly permalink.
-You can use the plugin to display a view in html elements or form inputs.
+You can use the plugin to display a preview in a html element or in an input form.
 
 Contributing
 ------------
-The StringToSlug uses [**NodeJS with NPM**](http://nodejs.org/) and [**Gulp**](http://gulpjs.com/) for compile, [**QUnit**](https://qunitjs.com/) and [**Karma**](http://karma-runner.github.io/) for testing:
+The **StringToSlug** uses [**NodeJS with NPM**](http://nodejs.org/) and [**Gulp**](http://gulpjs.com/) to compile a code, and [**QUnit**](https://qunitjs.com/) and [**Karma**](http://karma-runner.github.io/) for testing:
 
 To install **Bower** and **Gulp** globally, use **npm install -g**:
 ```shell
@@ -46,28 +46,28 @@ npm install bower -g
 npm install gulp -g
 ```
 
-Download and Install all dependencies with NPM and make sure Bower is up to date:
+Download and install all dependencies with **NPM** and make sure **Bower** is up to date:
 ```shell
 npm install
 bower install
 ```
 
-List all tasks with gulp
+List all tasks with **Gulp**
 ```shell
 gulp
 ```
 
-Gulp Watcher for Development
+Watch all files with *gulp watcher* to develop and test in realtime
 ```shell
 gulp watcher
 ```
 
-Gulp Tests for Testing
+Use **gulp tests** for testing
 ```shell
 gulp tests
 ```
 
-Gulp Build to Compile
+Use *gulp build* to compile
 ```shell
 gulp build
 ```
@@ -75,6 +75,6 @@ gulp build
 
 License
 ------------
-Copyright (c) 2009-2015 Leo Caseiro. This is a free software is licensed under the MIT License.
+Copyright (c) 2009-2015 Leo Caseiro. This is free software and is licensed under the MIT License.
 
-[Leo Caseiro](http://about.me/leocaseiro)
+Created and maintained by [Leo Caseiro](http://about.me/leocaseiro)
