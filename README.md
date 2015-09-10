@@ -1,12 +1,12 @@
-jQuery Plugin stringToSlug
+jQuery plugin stringToSlug
 =============
 
 A simple plugin in jQuery to create a URL.
-The stringToSlug converts string in any Language, including those with accents and special caracheteres, to a SLUG.
+The stringToSlug converts string in any language, including those with accents and special characters, to a SLUG.
 
 Documentation
 --------------
-Full Documentation with Examples at [http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/](http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/)
+Full documentation with examples at [http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/](http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/)
 
 
 Default Usage:
@@ -31,10 +31,9 @@ bower install --save jquery.stringtoslug
 
 Description
 --------------
-The stringToSlug uses a third-party library called [speakingURL](http://pid.github.io/speakingurl/) that removes special characters and converts the string to lowercase. The **StringToSlug** replaces spaces with space characteres(separator) and offers the option to add a prefix and/or a suffix for your slug.
+The stringToSlug uses a third-party library called [speakingURL](http://pid.github.io/speakingurl/) that removes special characters and converts the string to lowercase. The **StringToSlug** replaces spaces with space characters(separators) and offers the option to add a prefix and/or a suffix for your slug.
 
-Transforming a string into a url-friendly permalink.
-You can use the plugin to display a preview in a html element or in an input form.
+In order to transform a string into a url-friendly permalink, use the plugin to display a preview in a *html element* or in an *input form*.
 
 Contributing
 ------------
@@ -57,7 +56,7 @@ List all tasks with **Gulp**
 gulp
 ```
 
-Watch all files with *gulp watcher* to develop and test in realtime
+Watch all files with **gulp watcher** to develop and test in realtime
 ```shell
 gulp watcher
 ```
@@ -67,7 +66,7 @@ Use **gulp tests** for testing
 gulp tests
 ```
 
-Use *gulp build* to compile
+Use **gulp build** to compile
 ```shell
 gulp build
 ```
