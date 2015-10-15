@@ -1,4 +1,4 @@
-jQuery plugin stringToSlug
+jQuery plugin stringToSlug [![Bower version](https://badge.fury.io/bo/jquery.stringtoslug.svg)](https://badge.fury.io/bo/jquery.stringtoslug)
 =============
 
 A simple plugin in jQuery to create a URL.
