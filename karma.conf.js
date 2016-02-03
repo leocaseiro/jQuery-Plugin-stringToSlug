@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
         {pattern: './bower_components/jquery/dist/jquery.min.js'},
         {pattern: './bower_components/speakingurl/speakingurl.min.js'},
-        {pattern:'./dist/jquery.stringToSlug.min.js'},
+        {pattern:'./dist/jquery.stringtoslug.min.js'},
         {pattern: './tests/tests.js'}
     ],
 
