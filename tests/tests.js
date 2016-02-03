@@ -104,8 +104,22 @@ test( "callback don't bind", function() {
         callback: function(){console.log('callback as console');}
     };
 
-	var preText 		= "A text betweet quotes “ and ” are not going to be a problem!";
-	var resultExpect 	= 'a-text-betweet-quotes-and-are-not-going-to-be-a-problem';
+    var preText         = "A text betweet quotes “ and ” are not going to be a problem!";
+    var resultExpect    = 'a-text-betweet-quotes-and-are-not-going-to-be-a-problem';
+
+    fromToTest(preText, resultExpect, params);
+});
+
+test( "titleCase with accent", function() {
+    var params = {
+        options: {
+            titleCase: true,
+            lang: 'pt'
+        }
+    };
+
+	var preText 		= "Ánhanguera should be Anhanguera, but it's getting ANhanguera, same as Anguéra";
+	var resultExpect 	= 'Anhanguera-Should-Be-Anhanguera-But-It-s-Getting-ANhanguera-Same-As-Anguera';
 
 	fromToTest(preText, resultExpect, params);
 });
