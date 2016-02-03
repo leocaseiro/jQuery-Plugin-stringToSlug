@@ -49,7 +49,7 @@ var _stringToSlug_API = function( text, options ) {
     try {
         text = getSlug( text, defaults.options );
     } catch ( err ) {
-        console.warn( 'Make sure you insert speakingurl.min.js before jquery.stringToSlug.min.js' );
+        console.warn( 'Make sure you insert speakingurl.min.js before jquery.stringtoslug.min.js' );
     }
 
     stringToSlug = defaults.prefix + text + defaults.suffix; //Concatenate with prefix and suffix
