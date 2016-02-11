@@ -261,6 +261,57 @@
             'Ů': 'U',
             'Ž': 'Z',
 
+            // Dhivehi
+            'ހ': 'h',
+            'ށ': 'sh',
+            'ނ': 'n',
+            'ރ': 'r',
+            'ބ': 'b',
+            'ޅ': 'lh',
+            'ކ': 'k',
+            'އ': 'a',
+            'ވ': 'v',
+            'މ': 'm',
+            'ފ': 'f',
+            'ދ': 'dh',
+            'ތ': 'th',
+            'ލ': 'l',
+            'ގ': 'g',
+            'ޏ': 'gn',
+            'ސ': 's',
+            'ޑ': 'd',
+            'ޒ': 'z',
+            'ޓ': 't',
+            'ޔ': 'y',
+            'ޕ': 'p',
+            'ޖ': 'j',
+            'ޗ': 'ch',
+            'ޘ': 'tt',
+            'ޙ': 'hh',
+            'ޚ': 'kh',
+            'ޛ': 'th',
+            'ޜ': 'z',
+            'ޝ': 'sh',
+            'ޞ': 's',
+            'ޟ': 'd',
+            'ޠ': 't',
+            'ޡ': 'z',
+            'ޢ': 'a',
+            'ޣ': 'gh',
+            'ޤ': 'q',
+            'ޥ': 'w',
+            'ަ': 'a',
+            'ާ': 'aa',
+            'ި': 'i',
+            'ީ': 'ee',
+            'ު': 'u',
+            'ޫ': 'oo',
+            'ެ': 'e',
+            'ޭ': 'ey',
+            'ޮ': 'o',
+            'ޯ': 'oa',
+            'ް': '',
+
             // Greek
             'α': 'a',
             'β': 'v',
@@ -407,7 +458,9 @@
             'ţ': 't',
             'Ţ': 'T',
 
-            // Russian
+            // Russian https://en.wikipedia.org/wiki/Romanization_of_Russian
+            // ICAO
+
             'а': 'a',
             'б': 'b',
             'в': 'v',
@@ -418,7 +471,7 @@
             'ж': 'zh',
             'з': 'z',
             'и': 'i',
-            'й': 'j',
+            'й': 'i',
             'к': 'k',
             'л': 'l',
             'м': 'm',
@@ -430,7 +483,7 @@
             'т': 't',
             'у': 'u',
             'ф': 'f',
-            'х': 'h',
+            'х': 'kh',
             'ц': 'c',
             'ч': 'ch',
             'ш': 'sh',
@@ -451,7 +504,7 @@
             'Ж': 'Zh',
             'З': 'Z',
             'И': 'I',
-            'Й': 'J',
+            'Й': 'I',
             'К': 'K',
             'Л': 'L',
             'М': 'M',
@@ -463,7 +516,7 @@
             'Т': 'T',
             'У': 'U',
             'Ф': 'F',
-            'Х': 'H',
+            'Х': 'Kh',
             'Ц': 'C',
             'Ч': 'Ch',
             'Ш': 'Sh',
@@ -675,7 +728,10 @@
          */
         var lookAheadCharArray = [
             // burmese
-            '်'
+            '်',
+
+            // Dhivehi
+            'ް'
         ];
 
         /**
@@ -735,7 +791,11 @@
             'ဉ်': 'in',
             'ံ': 'an',
             'ိံ': 'ein',
-            'ုံ': 'on'
+            'ုံ': 'on',
+
+            // Dhivehi
+            'ައް': 'ah',
+            'ަށް': 'ah',
         };
 
         /**
@@ -951,6 +1011,18 @@
                 '>': 'groesser als',
                 '∑': 'Summe von',
                 '¤': 'Waehrung'
+            },
+
+            'dv': {
+                '∆': 'delta',
+                '∞': 'kolunulaa',
+                '♥': 'loabi',
+                '&': 'aai',
+                '|': 'noonee',
+                '<': 'ah vure kuda',
+                '>': 'ah vure bodu',
+                '∑': 'jumula',
+                '¤': 'faisaa'
             },
 
             'en': {
@@ -1238,14 +1310,6 @@
 
         allowedChars += separator;
 
-        if (titleCase) {
-
-            input = input.replace(/(\w)(\S*)/g, function (_, i, r) {
-                var j = i.toUpperCase() + (r !== null ? r : "");
-                return (Object.keys(customReplacements).indexOf(j.toLowerCase()) < 0) ? j : j.toLowerCase();
-            });
-        }
-
         // escape all necessary chars
         allowedChars = escapeChars(allowedChars);
 
@@ -1282,7 +1346,8 @@
 
                 lastCharWasSymbol = false;
                 lastCharWasDiatric = false;
-            } else if (ch in diatricMap) {
+            } else
+            if (ch in diatricMap) {
                 diatricString += ch;
                 ch = '';
                 // end of string, put the whole meaningful word
@@ -1315,6 +1380,13 @@
 
             // add allowed chars
             result += ch.replace(new RegExp('[^\\w\\s' + allowedChars + '_-]', 'g'), separator);
+        }
+
+        if (titleCase) {
+            result = result.replace(/(\w)(\S*)/g, function (_, i, r) {
+                var j = i.toUpperCase() + (r !== null ? r : "");
+                return (Object.keys(customReplacements).indexOf(j.toLowerCase()) < 0) ? j : j.toLowerCase();
+            });
         }
 
         // eliminate duplicate separators

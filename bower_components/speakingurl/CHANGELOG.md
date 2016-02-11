@@ -1,6 +1,10 @@
 Changelog
 =========
-
+-   v9.0.0 fix of "Title Case error while accent on First Character for each word #72"
+-   v8.0.2 fix the fix; problems with release v8.0.1 with building speakingurl-min.js
+-   v8.0.1 merge #71 Improve sprockets fix
+-   v8.0.0 Cleanup Russian transliteration to ICAO https://en.wikipedia.org/wiki/Romanization_of_Russian
+-	v7.0.0 Add Dhivehi translations; thanks to https://github.com/jawish/;
 -	v6.0.0 Add Catalan translations #64; thanks to https://github.com/alexandernst/; Add Finnish char map #65; thanks to https://github.com/jmheik/
 -	v5.0.1 bugfix #62; thanks to https://github.com/jdiprizio
 -	v5.0.0 add Ukranian #60, Latvian #57 symbol translations; update devDependencies

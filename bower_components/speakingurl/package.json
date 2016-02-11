@@ -1,6 +1,6 @@
 {
     "name": "speakingurl",
-    "version": "6.0.0",
+    "version": "9.0.0",
     "description": "Generate a slug – transliteration with a lot of options",
     "homepage": "http://pid.github.io/speakingurl/",
     "github": "http://github.com/pid/speakingurl",
@@ -9,6 +9,7 @@
         "url": "git://github.com:pid/speakingurl.git"
     },
     "bugs": "https://github.com/pid/speakingurl/issues",
+    "license": "BSD-3-Clause",
     "licenses": [{
         "type": "BSD",
         "url": "https://raw.github.com/pid/speakingurl/master/LICENSE"
@@ -46,19 +47,20 @@
     "dependencies": {},
     "devDependencies": {
         "gulp": "^3.8.8",
-        "gulp-bump": "^0.3.0",
+        "gulp-bump": "^1.0.0",
         "gulp-header": "^1.2.2",
-        "gulp-jsbeautifier": "0.0.8",
-        "gulp-jshint": "^1.8.5",
-        "gulp-load-plugins": "^0.10.0",
+        "gulp-jsbeautifier": "^1.0.1",
+        "gulp-jshint": "^2.0.0",
+        "gulp-load-plugins": "^1.1.0",
         "gulp-mocha": "^2.0.0",
         "gulp-rename": "^1.2.0",
         "gulp-replace": "^0.5.0",
         "gulp-uglify": "^1.0.1",
+        "jshint": "^2.8.0",
         "jshint-stylish": "^2.0.0",
         "minimist": "^1.1.0",
         "mocha": "^2.0.1",
-        "should": "^6.0.1"
+        "should": "^8.0.2"
     },
     "jam": {
         "dependencies": {},

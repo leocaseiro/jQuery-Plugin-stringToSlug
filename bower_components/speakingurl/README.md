@@ -3,7 +3,6 @@ SpeakingURL
 
 [![Build Status](https://travis-ci.org/pid/speakingurl.png)](https://travis-ci.org/pid/speakingurl) [![NPM version](https://badge.fury.io/js/speakingurl.png)](http://badge.fury.io/js/speakingurl) [![Bower version](https://badge.fury.io/bo/speakingurl.svg)](http://badge.fury.io/bo/speakingurl) [![Gem Version](https://badge.fury.io/rb/speakingurl-rails.svg)](http://badge.fury.io/rb/speakingurl-rails) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pid/speakingurl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Flattr](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1418477/pidspeakingurl-on-GitHub)
 
-[![Package Quality](http://npm.packagequality.com/badge/speakingurl.png)](http://packagequality.com/#?package=speakingurl)
 
 ====================================================================================================================================================================================================================================================================================================================================================
 
@@ -58,14 +57,14 @@ copy the file speakingurl.min.js to your script directory
 available versions:
 
 -	[www.cdnjs.com/libraries/speakingurl/](http://cdnjs.com/libraries/speakingurl/)
--	use [//cdnjs.cloudflare.com/ajax/libs/speakingurl/6.0.0/speakingurl.min.js](https://cdnjs.cloudflare.com/ajax/libs/speakingurl/6.0.0/speakingurl.min.js)
+-	use [//cdnjs.cloudflare.com/ajax/libs/speakingurl/9.0.0/speakingurl.min.js](https://cdnjs.cloudflare.com/ajax/libs/speakingurl/9.0.0/speakingurl.min.js)
 
 #### [CDN/maxcdn](https://www.maxcdn.com/)
 
 available versions:
 
 -	[www.jsdelivr.com/#!speakingurl](]http://www.jsdelivr.com/#!speakingurl)
--	use [//cdn.jsdelivr.net/speakingurl/6.0.0/speakingurl.min.js](https://cdn.jsdelivr.net/speakingurl/6.0.0/speakingurl.min.js)
+-	use [//cdn.jsdelivr.net/speakingurl/9.0.0/speakingurl.min.js](https://cdn.jsdelivr.net/speakingurl/9.0.0/speakingurl.min.js)
 
 Usage
 -----
@@ -79,13 +78,14 @@ Usage
 -	`options` {object}
 
 	-	`separator` {string} default: '-'
-		-	char that replace the whitespaces
+		-	char that replaces the whitespaces
 	-	`lang` {string} default: 'en' // ISO 639-1 Codes
 		-	language specific transliteration (
 			-	'ar' // Arabic
 			-	'az' // Azerbaijani\*
 			-	'cs' // Czech
 			-	'de' // German
+			-	'dv' // Divehi
 			-	'en' // English
 			-	'es' // Spanish
 			-	'fr' // French
@@ -202,6 +202,11 @@ slug = getSlug("မြန်မာ သာဓက", {
 	    lang: 'my'
 	});
 console.log(slug); // Output: myanma-thadak
+
+slug = getSlug('މިއަދަކީ ހދ ރީތި ދވހކވ', {
+        lang: 'dv'
+    });
+console.log(slug); // Output: miadhakee hd reethi dvhkv
 
 slug = getSlug("Apple & Pear!", {
 	    lang: 'en' // lang: "en" is default, just to clarify
@@ -399,7 +404,7 @@ Credits
 
 The BSD 3-Clause License (BSD3)
 
-Copyright (c) 2013-2015 Sascha Droste pid@posteo.net All rights reserved.
+Copyright (c) 2013-2016 Sascha Droste pid@posteo.net All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
