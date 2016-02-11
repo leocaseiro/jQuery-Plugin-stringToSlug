@@ -77,8 +77,8 @@
         <h1 class="sts-title"><i class="fa fa-exchange"></i> jQuery StringToSlug</h1>
         <p class="sts-subtitle">Convert any string into slugs and bind using jQuery</p>
         <p>
-            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.zip" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.0 (zip)</a>
-            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.0.tar.gz" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.0 (tar.gz)</a>
+            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.2.zip" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.2 (zip)</a>
+            <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.2.tar.gz" class="btn btn-lg btn-white btn-outline"> <i class="glyphicon glyphicon-download-alt"></i> Download 2.0.2 (tar.gz)</a>
             <a href="https://github.com/leocaseiro/jQuery-Plugin-stringToSlug" class="btn btn-lg btn-white btn-outline"> <i class="fa fa-github"></i> View on Github</a>
         </p>
 
@@ -296,7 +296,7 @@ $(document).ready( function() {
                             <div role="tabpanel" class="tab-pane active" id="events-usage-js">
 <pre class="prettyprint">$(document).ready( function() {
     $(".input-to-slug").stringToSlug({
-        setEvents: 'blur
+        setEvents: 'blur'
     });
 });</pre>
                             </div><!-- tab-pane -->
@@ -466,7 +466,7 @@ $(document).ready( function() {
                             <div role="tabpanel" class="tab-pane active" id="suffix-usage-js">
 <pre class="prettyprint">$(document).ready( function() {
     $('[type="text"]').stringToSlug({
-        suffix: 'js-'
+        suffix: '.jpg'
     });
 });</pre>
                             </div><!-- tab-pane -->
@@ -566,7 +566,7 @@ $(document).ready( function() {
                     <div class="panel-heading">Example with <code>options</code> from SpeakingURL changing the language to Arabic and using titleCase pattern</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <input type="text" class="basic-usage form-control" id="input-options" value="Text In Arabic: هذا هو الاختبار مع اللغة العربية With titleCase Patternة" />
+                            <input type="text" class="basic-usage form-control" id="input-options" value="Text In Arabic: هذا هو الاختبار مع اللغة العربية With titleCase Pattern" />
                         </div>
                         <div class="form-group">
                             <p class="label label-danger input-options-preview">Text-In-Arabic-htha-hw-alakhtbar-ma-allghh-alarbyh-With-TitleCase-Pattern</p>
@@ -686,9 +686,9 @@ $(document).ready( function() {
     <!-- Bootstrap jQuery -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Dependency SpeakingURL -->
-    <script src="./bower_components/speakingurl/speakingurl.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/speakingurl/6.0.0/speakingurl.min.js"></script>
     <!-- stringToSlug -->
-    <script type="text/javascript" src="dist/jquery.stringToSlug.min.js"></script>
+    <script type="text/javascript" src="dist/jquery.stringtoslug.min.js"></script>
 
     <!-- Google Prettify  -->
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

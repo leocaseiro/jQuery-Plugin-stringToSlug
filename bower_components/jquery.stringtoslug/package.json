@@ -1,6 +1,6 @@
 {
   "name": "jquery.stringtoslug",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Convert a STRING to a SLUG in any language",
   "main": "gulp.config.js",
   "directories": {
@@ -49,6 +49,7 @@
     "karma": "^0.13.9",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-qunit": "^0.1.5",
+    "phantomjs": "^2.1.3",
     "qunitjs": "^1.19.0"
   },
   "dependencies": {
