@@ -74,7 +74,7 @@ gulp build
 
 License
 ------------
-Copyright (c) 2009-2015 Leo Caseiro. This is free software and is licensed under the MIT License.
+Copyright (c) 2009-2016 Leo Caseiro. This is free software and is licensed under the MIT License.
 
 Created and maintained by [Leo Caseiro](http://about.me/leocaseiro)
 
