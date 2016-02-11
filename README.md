@@ -78,6 +78,3 @@ Copyright (c) 2009-2016 Leo Caseiro. This is free software and is licensed under
 
 Created and maintained by [Leo Caseiro](http://about.me/leocaseiro)
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/leocaseiro/jquery-plugin-stringtoslug/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
