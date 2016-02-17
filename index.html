@@ -73,6 +73,18 @@
         .nav.nav-subnav>li>a {
             padding: 7px 15px 7px 25px;
         }
+
+         pre.prettyprint {
+        	padding-left: 5px !important;
+        }
+
+        .highlight > pre.prettyprint {
+        	padding-left: 10px !important;
+        }
+        .highlight > pre.prettyprint > xmp {
+        	margin-top: 5px !important;
+        	margin-bottom: 5px !important;
+        }
     </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -119,10 +131,10 @@
                     <pre><code>bower install --save jquery.stringtoslug</code></pre>
                 </div><br>
                 <h4>Add jQuery, SpeakingURL and stringToSlug to your html</h4>
-                <div class="highlight"><pre><code><xmp><script src="./bower_components/jquery/dist/jquery.min.js"></script>
+                <div class="highlight">
+<pre style="padding: 5px;" class="prettyprint"><xmp><script src="./bower_components/jquery/dist/jquery.min.js"></script>
 <script src="./bower_components/speakingurl/dist/speakingurl.min.js"></script>
-<script src="./bower_components/jquery.stringtoslug/dist/jquery.stringtoslug.min.js"></script></xmp></code></pre>
-
+<script src="./bower_components/jquery.stringtoslug/dist/jquery.stringtoslug.min.js"></script></xmp></pre>
                 </div>
             </section>
 
@@ -703,7 +715,7 @@ $(document).ready( function() {
 <!-- Dependency SpeakingURL -->
 <script src="./bower_components/speakingurl/speakingurl.min.js"></script>
 <!-- stringToSlug -->
-<script type="text/javascript" src="./bower_components/jquery.stringtoslug/dist/jquery.stringToSlug.min.js"></script>
+<script type="text/javascript" src="./bower_components/jquery.stringtoslug/dist/jquery.stringtoslug.min.js"></script>
 
 <!-- Google Prettify  -->
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
