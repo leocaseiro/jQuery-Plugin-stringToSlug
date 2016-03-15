@@ -1,7 +1,7 @@
 {
   "name": "jquery.stringtoslug",
   "version": "2.0.2",
-  "homepage": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug",
+  "homepage": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
   "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
   "authors": [
     "Leo Caseiro"

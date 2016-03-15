@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        {pattern: './bower_components/jquery/dist/jquery.min.js'},
-        {pattern: './bower_components/speakingurl/speakingurl.min.js'},
+        {pattern: './node_modules/jquery/dist/jquery.min.js'},
+        {pattern: './node_modules/speakingurl/speakingurl.min.js'},
         {pattern:'./dist/jquery.stringtoslug.min.js'},
         {pattern: './tests/tests.js'}
     ],

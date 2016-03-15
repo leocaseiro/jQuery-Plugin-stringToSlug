@@ -21,21 +21,23 @@
     "chars"
   ],
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp tests",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leocaseiro/jQuery-Plugin-stringToSlug.git"
+    "url": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug.git"
   },
   "author": "Leo Caseiro",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues"
   },
-  "homepage": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug",
+  "homepage": "https://leocaseiro.github.com/jQuery-Plugin-stringToSlug",
   "devDependencies": {
     "del": "^2.0.0",
     "gulp": "^3.9.0",
+    "gulp-header": "^1.7.1",
     "gulp-if": "^1.2.5",
     "gulp-jscs": "^2.0.0",
     "gulp-jshint": "^1.11.2",
@@ -50,9 +52,11 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-qunit": "^0.1.5",
     "phantomjs": "^2.1.3",
-    "qunitjs": "^1.19.0"
+    "qunitjs": "^1.19.0",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
-    "gulp-header": "^1.7.1"
+    "jquery": "^2.2.1",
+    "speakingurl": "^9.0.0"
   }
 }
