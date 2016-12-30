@@ -52,7 +52,7 @@ var _stringToSlug_API = function( text, options ) {
         console.warn( 'Make sure you insert speakingurl.min.js before jquery.stringtoslug.min.js' );
     }
 
-    stringToSlug = defaults.prefix + text + defaults.suffix; //Concatenate with prefix and suffix
+    stringToSlug = defaults.prefix + text; //Concatenate with prefix and suffix
 
     return stringToSlug;
 };
