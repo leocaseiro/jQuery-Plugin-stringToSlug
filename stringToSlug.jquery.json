@@ -1,6 +1,6 @@
 {
   "name": "stringToSlug",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "title": "jQuery Plugin stringToSlug",
   "description": "The stringToSlug converts any string to SLUG PERMALINK according unicode.org in most of Languages using special chars or not ())",
   "keywords": [
@@ -30,7 +30,7 @@
   "bugs": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/issues",
   "homepage": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
   "docs": "http://leocaseiro.github.io/jQuery-Plugin-stringToSlug/",
-  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/2.0.2.zip",
+  "download": "https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/2.1.0.zip",
   "dependencies": {
     "jquery": ">=1.2.2"
   }

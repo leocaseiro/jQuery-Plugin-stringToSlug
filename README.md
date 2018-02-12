@@ -25,9 +25,9 @@ Install via Bower:
 bower install --save jquery.stringtoslug
 ```
 
-[Download](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.2.zip):
+[Download](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.1.0.zip):
 -----------------
-[Click here to download the latest version](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.0.2.zip)
+[Click here to download the latest version](https://github.com/leocaseiro/jQuery-Plugin-stringToSlug/archive/v2.1.0.zip)
 
 Description
 --------------
@@ -74,7 +74,7 @@ gulp build
 
 License
 ------------
-Copyright (c) 2009-2016 Leo Caseiro. This is free software and is licensed under the MIT License.
+Copyright (c) 2009-2018 Leo Caseiro. This is free software and is licensed under the MIT License.
 
 Created and maintained by [Leo Caseiro](http://about.me/leocaseiro)
 
